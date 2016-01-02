@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m0 -mthumb -Wall -ffunction-sections -g -O0 -c -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -DSTM32F030R8T6 -DSTM32F030X8 -I..\..\..\..\..\Users\yilmaz\SVN_Projects\P1_STM32F030\Firmware\trunk\CoOS\kernel -I..\..\..\..\..\Users\yilmaz\SVN_Projects\P1_STM32F030\Firmware\trunk\CoOS\portable -I..\..\..\..\..\Users\yilmaz\SVN_Projects\P1_STM32F030\Firmware\trunk\stm32_lib\inc -I..\..\..\..\..\Users\yilmaz\SVN_Projects\P1_STM32F030\Firmware\trunk\CoOS -I..\..\..\..\..\Users\yilmaz\SVN_Projects\P1_STM32F030\Firmware\trunk\cmsis_boot -I..\..\..\..\..\Users\yilmaz\SVN_Projects\P1_STM32F030\Firmware\trunk\cmsis_core -I..\..\..\..\..\Users\yilmaz\SVN_Projects\P1_STM32F030\Firmware -I..\..\..\..\..\Users\yilmaz\SVN_Projects\P1_STM32F030\Firmware\trunk\stm32_lib -I..\..\..\..\..\Users\yilmaz\SVN_Projects\P1_STM32F030\Firmware\trunk -I..\..\..\..\..\Users\yilmaz\SVN_Projects\P1_STM32F030">
+      <target file="timer.o" lastModified="151e0a82f03">
+         <source file="..\..\..\CoOS\kernel\timer.c" lastModified="149ce6e4ec0"/>
+      </target>
+      <target file="gpio.o" lastModified="151e0a8368a">
+         <source file="..\..\..\gpio.c" lastModified="14aad00103d"/>
+      </target>
+      <target file="mbox.o" lastModified="151e0a83636">
+         <source file="..\..\..\CoOS\kernel\mbox.c" lastModified="149ce6e4ec0"/>
+      </target>
+      <target file="mutex.o" lastModified="151e0a84100">
+         <source file="..\..\..\CoOS\kernel\mutex.c" lastModified="149ce6e4ec0"/>
+      </target>
+      <target file="event.o" lastModified="151e0a83d59">
+         <source file="..\..\..\CoOS\kernel\event.c" lastModified="149ce6e4ec0"/>
+      </target>
+      <target file="pub_var.o" lastModified="151e0a838b0">
+         <source file="..\..\..\pub_var.c" lastModified="14ab71e9f96"/>
+      </target>
+      <target file="hook.o" lastModified="151e0a84545">
+         <source file="..\..\..\CoOS\kernel\hook.c" lastModified="149ce6e4ec0"/>
+      </target>
+      <target file="printf.o" lastModified="151e0a835dc">
+         <source file="..\..\..\stdio\printf.c" lastModified="14ae53e6519"/>
+      </target>
+      <target file="serviceReq.o" lastModified="151e0a8338e">
+         <source file="..\..\..\CoOS\kernel\serviceReq.c" lastModified="149ce6e4ec0"/>
+      </target>
+      <target file="stm32f0xx_dma.o" lastModified="151e0a83565">
+         <source file="..\..\..\stm32_lib\src\stm32f0xx_dma.c" lastModified="14a91119703"/>
+      </target>
+      <target file="time.o" lastModified="151e0a83b03">
+         <source file="..\..\..\CoOS\kernel\time.c" lastModified="149ce6e4ec0"/>
+      </target>
+      <target file="stm32f0xx_gpio.o" lastModified="151e0a839de">
+         <source file="..\..\..\stm32_lib\src\stm32f0xx_gpio.c" lastModified="14a6a6cd568"/>
+      </target>
+      <target file="queue.o" lastModified="151e0a84098">
+         <source file="..\..\..\CoOS\kernel\queue.c" lastModified="149ce6e4ec0"/>
+      </target>
+      <target file="kernelHeap.o" lastModified="151e0a82b56">
+         <source file="..\..\..\CoOS\kernel\kernelHeap.c" lastModified="149ce6e4ec0"/>
+      </target>
+      <target file="sem.o" lastModified="151e0a844d7">
+         <source file="..\..\..\CoOS\kernel\sem.c" lastModified="149ce6e4ec0"/>
+      </target>
+      <target file="stm32f0xx_rcc.o" lastModified="151e0a82dc8">
+         <source file="..\..\..\stm32_lib\src\stm32f0xx_rcc.c" lastModified="14a6a6cd574"/>
+      </target>
+      <target file="port.o" lastModified="151e0a8402d">
+         <source file="..\..\..\CoOS\portable\GCC\port.c" lastModified="14a6a6c0c5e"/>
+      </target>
+      <target file="uart.o" lastModified="151e0a8313d">
+         <source file="..\..\..\uart.c" lastModified="14ad663c1ae"/>
+      </target>
+      <target file="task.o" lastModified="151e0a83273">
+         <source file="..\..\..\CoOS\kernel\task.c" lastModified="149ce6e4ec0"/>
+      </target>
+      <target file="core.o" lastModified="151e0a82c79">
+         <source file="..\..\..\CoOS\kernel\core.c" lastModified="149ce6e4ec0"/>
+      </target>
+      <target file="stm32f0xx_misc.o" lastModified="151e0a8465c">
+         <source file="..\..\..\stm32_lib\src\stm32f0xx_misc.c" lastModified="14a7e11097f"/>
+      </target>
+      <target file="arch.o" lastModified="151e0a843b8">
+         <source file="..\..\..\CoOS\portable\arch.c" lastModified="14a6a6c0c5d"/>
+      </target>
+      <target file="syscalls.o" lastModified="151e0a83e83">
+         <source file="..\..\..\syscalls\syscalls.c" lastModified="14a6a6bbab3"/>
+      </target>
+      <target file="stm32f0xx_usart.o" lastModified="151e0a83fdd">
+         <source file="..\..\..\stm32_lib\src\stm32f0xx_usart.c" lastModified="14a905e6707"/>
+      </target>
+      <target file="startup_stm32f0xx.o" lastModified="151e0a834f6">
+         <source file="..\..\..\cmsis_boot\startup\startup_stm32f0xx.s" lastModified="14a6a6bf246"/>
+      </target>
+      <target file="modbus.o" lastModified="151e0a83c34">
+         <source file="..\..\..\modbus.c" lastModified="14b7fbcd7e4"/>
+      </target>
+      <target file="system_stm32f0xx.o" lastModified="151e0a8429d">
+         <source file="..\..\..\cmsis_boot\system_stm32f0xx.c" lastModified="14a73636913"/>
+      </target>
+      <target file="flag.o" lastModified="151e0a8422f">
+         <source file="..\..\..\CoOS\kernel\flag.c" lastModified="149ce6e4ec0"/>
+      </target>
+      <target file="mm.o" lastModified="151e0a8379a">
+         <source file="..\..\..\CoOS\kernel\mm.c" lastModified="149ce6e4ec0"/>
+      </target>
+      <target file="utility.o" lastModified="151e0a8300a">
+         <source file="..\..\..\CoOS\kernel\utility.c" lastModified="149ce6e4ec0"/>
+      </target>
+      <target file="main.o" lastModified="151e0a834de">
+         <source file="..\..\..\main.c" lastModified="14aaed05788"/>
+      </target>
+   </processor>
+</history>
