@@ -35,8 +35,8 @@ void initGpio(void)
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_Level_3;
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	GPIO_Init(GPIOA, &GPIO_InitStructure);
-	/* Configure PA0 in input mode */
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;
+	/* Configure PA0 to PA7 in input mode */
+	GPIO_InitStructure.GPIO_Pin = ((uint16_t)0x00FF); //PA0..PA7
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
 	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_Level_3;
@@ -44,9 +44,8 @@ void initGpio(void)
 	GPIO_Init(GPIOA, &GPIO_InitStructure);
 
 	GPIO_DeInit(GPIOC);
-
-	/* Configure PC8 and PC9 in output push-pull mode */
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8 | GPIO_Pin_9;
+	/* Configure PC0 to PC9 in output push-pull mode */
+	GPIO_InitStructure.GPIO_Pin = ((uint16_t)0x03FF); //PC0..PC9;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
 	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_Level_3;

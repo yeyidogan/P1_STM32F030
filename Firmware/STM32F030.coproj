@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Project version="2G - 1.7.7" name="STM32F030">
+<Project version="2G - 2.0.3" name="STM32F030">
   <Target name="STM32F030_Output" isCurrent="1">
-    <Device manufacturerId="9" manufacturerName="ST" chipId="438" chipName="STM32F030R8T6" boardId="" boardName=""/>
+    <Device manufacturerId="9" manufacturerName="ST" chipId="310" chipName="STM32F030R8T6" boardId="" boardName=""/>
     <BuildOption>
       <Compile>
         <Option name="OptimizationLevel" value="0"/>
         <Option name="UseFPU" value="0"/>
         <Option name="UserEditCompiler" value=""/>
         <Option name="SupportCPlusplus" value="0"/>
+        <Option name="DEBUG" value="2"/>
+        <Option name="WARNING" value="1"/>
         <Includepaths>
           <Includepath path="."/>
         </Includepaths>
@@ -26,10 +28,11 @@
         <Option name="LTO" value="0"/>
         <Option name="IsNewStartupCode" value="1"/>
         <Option name="Library" value="Not use C Library"/>
+        <Option name="UserEditLinker" value=""/>
         <LinkedLibraries/>
         <MemoryAreas debugInFlashNotRAM="1">
-          <Memory name="IROM1" type="ReadOnly" size="0x00010000" startValue="0x08000000"/>
-          <Memory name="IRAM1" type="ReadWrite" size="0x00002000" startValue="0x20000000"/>
+          <Memory name="IROM1" type="ReadOnly" size="0x00020000" startValue="0x08000000"/>
+          <Memory name="IRAM1" type="ReadWrite" size="0x00005000" startValue="0x20000000"/>
           <Memory name="IROM2" type="ReadOnly" size="" startValue=""/>
           <Memory name="IRAM2" type="ReadWrite" size="" startValue=""/>
         </MemoryAreas>
@@ -65,21 +68,16 @@
       <Option name="org.coocox.codebugger.gdbjtag.core.verify" value="1"/>
       <Option name="org.coocox.codebugger.gdbjtag.core.downloadFuction" value="Erase Effected"/>
       <Option name="org.coocox.codebugger.gdbjtag.core.defaultAlgorithm" value="STM32F05xx_64.elf"/>
+      <Option name="org.coocox.codebugger.gdbjtag.coredebugInRamInitCommands" value="cd C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/STM32F030_Output/Debug/bin
+restore STM32F030.elf
+set {unsigned int*}0xE000ED08 = 0x20000000
+set $sp = {unsigned int*}0x20000000
+set $pc = {unsigned int*}0x20000004
+"/>
     </DebugOption>
     <ExcludeFile/>
   </Target>
-  <Components path="./">
-    <Component id="30" name="C Library" path="" type="2"/>
-    <Component id="31" name="Retarget printf" path="" type="2"/>
-    <Component id="46" name="M0 Cmsis Core" path="" type="2"/>
-    <Component id="47" name="CooCox OS" path="" type="2"/>
-    <Component id="418" name="CMSIS BOOT" path="" type="2"/>
-    <Component id="419" name="RCC" path="" type="2"/>
-    <Component id="421" name="MISC" path="" type="2"/>
-    <Component id="422" name="GPIO" path="" type="2"/>
-    <Component id="428" name="DMA" path="" type="2"/>
-    <Component id="437" name="USART" path="" type="2"/>
-  </Components>
+  <Components path="./"/>
   <Files>
     <File name="CoOS/kernel/utility.c" path="CoOS/kernel/utility.c" type="1"/>
     <File name="CoOS/kernel/OsConfig.h" path="CoOS/kernel/OsConfig.h" type="1"/>
@@ -101,10 +99,10 @@
     <File name="syscalls/syscalls.c" path="syscalls/syscalls.c" type="1"/>
     <File name="CoOS/kernel/timer.c" path="CoOS/kernel/timer.c" type="1"/>
     <File name="gpio.h" path="gpio.h" type="1"/>
-    <File name="pub_s.h" path="pub_s.h" type="1"/>
-    <File name="stm32_lib/src/stm32f0xx_dma.c" path="stm32_lib/src/stm32f0xx_dma.c" type="1"/>
     <File name="cmsis_core/core_cm0.h" path="cmsis_core/core_cm0.h" type="1"/>
+    <File name="stm32_lib/src/stm32f0xx_dma.c" path="stm32_lib/src/stm32f0xx_dma.c" type="1"/>
     <File name="CoOS/kernel/task.c" path="CoOS/kernel/task.c" type="1"/>
+    <File name="pub_s.h" path="pub_s.h" type="1"/>
     <File name="modbus.h" path="modbus.h" type="1"/>
     <File name="CoOS/Document" path="" type="2"/>
     <File name="CoOS/portable/GCC/port.c" path="CoOS/portable/GCC/port.c" type="1"/>

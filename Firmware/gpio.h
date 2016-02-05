@@ -6,6 +6,12 @@
 #ifndef __GPIO_H
 #define __GPIO_H
 
-void initGpio(void);
+/* Private typedef -----------------------------------------------------------*/
+/* Private define ------------------------------------------------------------*/
+#define USER_BUTTON_PORT GPIOA
+#define USER_BUTTON_PIN GPIO_Pin_0
+
+/* Private function declerations----------------------------------------------*/
+extern void initGpio(void);
 
 #endif

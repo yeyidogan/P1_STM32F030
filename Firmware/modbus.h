@@ -55,7 +55,7 @@ extern MODBUS_TX_RX_DATA mbTxRxData;
 //extern const uint16_t wCrcTable[];
 
 /* Private functions */
-void modbusRTU(void);
+extern void modbusRTU(void);
 //void incPtrData(void);
 //uint16_t crc16(const uint8_t *ptrCell, uint16_t length);
 //uint8_t checkCrc16(const uint8_t *ptrCell, uint16_t length);

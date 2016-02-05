@@ -163,14 +163,14 @@ uint8_t mbCheckLimits(uint16_t maxLimit) {
 #define MAX_QTY_OUTPUT 0x7D0
 #define MAX_QTY_REGISTER 0x7D
 void modbusRTU(void) {
-	if (mbTxRxData.uartRxPtr->length < MB_MIN_FRAME_SIZE) //return if there is no enough data
+	if (mbTxRxData.uartRxPtr->length1 < MB_MIN_FRAME_SIZE) //return if there is no enough data
 		return;
 
-	ptrData = &(mbTxRxData.uartRxPtr->buffer[mbTxRxData.uartRxPtr->firstDataId]);
-	ptrMax = &(mbTxRxData.uartRxPtr->buffer[UART_RX_BUFFER_SIZE - 1]);
-	ptrMin = &(mbTxRxData.uartRxPtr->buffer[0]);
+	//ptrData = &(mbTxRxData.uartRxPtr->buffer[mbTxRxData.uartRxPtr->firstDataId]);
+	//ptrMax = &(mbTxRxData.uartRxPtr->buffer[UART_RX_BUFFER_SIZE - 1]);
+	//ptrMin = &(mbTxRxData.uartRxPtr->buffer[0]);
 
-	if (*ptrData == mbTxRxData.mbAddress) {
+	if (*ptrData == mbTxRxData.mbAddress){
 		incPtrData();
 		mbRequestFrame.mbFunction = *ptrData;
 		incPtrData();
@@ -185,19 +185,19 @@ void modbusRTU(void) {
 
 		switch (mbRequestFrame.mbFunction) {
 			case MBFN_READ_COILS:
-				if (checkCrc16(&(mbTxRxData.uartRxPtr->buffer[mbTxRxData.uartRxPtr->firstDataId]), MB_MIN_FRAME_SIZE - 2)) {
-					if (mbCheckLimits(MAX_QTY_OUTPUT)) {
-						if (mbRequestFrame.mbRegAddress.word + mbRequestFrame.mbNumOfRegOrCoil.word < MB_COIL_SIZE) {
-							//mbReadCoilRegister();
-						}
-						else {
-							mbReturnException(OUT_OF_DATA_REGION);
-						}
-					}
-					else {
-						mbReturnException(OUT_OF_MB_LIMIT);
-					}
-				}
+				//if (checkCrc16(&(mbTxRxData.uartRxPtr->buffer1[mbTxRxData.uartRxPtr->firstDataId]), MB_MIN_FRAME_SIZE - 2)) {
+				//	if (mbCheckLimits(MAX_QTY_OUTPUT)) {
+				//		if (mbRequestFrame.mbRegAddress.word + mbRequestFrame.mbNumOfRegOrCoil.word < MB_COIL_SIZE) {
+				//			//mbReadCoilRegister();
+				//		}
+				//		else {
+				//			mbReturnException(OUT_OF_DATA_REGION);
+				//		}
+				//	}
+				//	else {
+				//		mbReturnException(OUT_OF_MB_LIMIT);
+				//	}
+				//}
 				break;
 			case MBFN_READ_DISCRETE_INPUTS:
 				break;

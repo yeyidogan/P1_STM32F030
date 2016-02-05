@@ -6,6 +6,8 @@
 #include "stm32f0xx.h"
 #include "stm32f0xx_gpio.h"
 #include "stm32f0xx_rcc.h"
+#include "stm32f0xx_dma.h"
+#include "stm32f0xx_usart.h"
 #include "gpio.h"
 #include "uart.h"
 //#include "stm32f0xx_misc.h"
@@ -32,6 +34,8 @@ typedef struct
 }test_t;
 
 const test_t par={345,20,130};
+
+uint32_t ul_tmp;
 
 /**
  *******************************************************************************
@@ -68,10 +72,19 @@ void taskA (unsigned int st)
  */
 void taskB (test_t* p){
 	unsigned int led_num;
+
 	led_num=p->m3;
 	for (;;) {
 		led_num++;
-		CoTickDelay (50);
+		CoTickDelay (10);
+		if (GPIO_ReadInputDataBit(USER_BUTTON_PORT, USER_BUTTON_PIN)){
+
+			uart1TxCmd(uart1Tx.buffer, 0x15);
+
+			//ul_tmp = DMA1->ISR;
+			CoTickDelay (50);
+			while (GPIO_ReadInputDataBit(USER_BUTTON_PORT, USER_BUTTON_PIN));
+		}
 	}
 }
 
@@ -123,11 +136,12 @@ int main(void)
 	initGpio();
 	initUart1(9600);
 	initUartDma();
+	uart1NvicConfig();
 
 	CoInitOS(); /*!< Initial CooCox CoOS */
 	/*!< Create three tasks	*/
-	CoCreateTask((FUNCPtr)taskA,(void *)123,0,&taskA_stk[STACK_SIZE_TASKA-1],STACK_SIZE_TASKA);
-	CoCreateTask((FUNCPtr)taskB,(void *)&par,1,&taskB_stk[STACK_SIZE_TASKB-1],STACK_SIZE_TASKB);
+	//CoCreateTask((FUNCPtr)taskA,(void *)123,0,&taskA_stk[STACK_SIZE_TASKA-1],STACK_SIZE_TASKA);
+	//CoCreateTask((FUNCPtr)taskB,(void *)&par,1,&taskB_stk[STACK_SIZE_TASKB-1],STACK_SIZE_TASKB);
 	CoCreateTask((FUNCPtr)taskC,(void *)0,2,&taskC_stk[STACK_SIZE_TASKC-1],STACK_SIZE_TASKC);
 	CoStartOS(); /*!< Start multitask*/
 
