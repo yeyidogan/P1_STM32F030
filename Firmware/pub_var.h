@@ -7,10 +7,13 @@
 #define __PUB_VAR_H
 
 #include "pub_s.h"
+#include "par_enums.h"
 
 /* Public typedef */
 /* Public define */
-
+/* Public variables */
 extern PARAMETER_TYPE sys_par;
+/* Public functions */
+extern void setParameters(void);
 
 #endif

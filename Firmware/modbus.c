@@ -3,118 +3,91 @@
 *	Modbus functions
 *	Created date: 2015.01.05
 *******************************************************************************/
-
-#include <stdint.h>
-#include "stm32f0xx.h"
-#include "stm32f0xx_usart.h"
-#include "stm32f0xx_misc.h"
-#include "uart.h"
-#include "pub_var.h"
 #include "modbus.h"
-#include "util.h"
 
 /* Private typedef */
 /* Private define */
 
 /* Private macro */
 /* Private variables */
-MODBUS_REQUEST_FRAME mbRequestFrame;
-uint8_t *ptrData, *ptrMax, *ptrMin;
 MODBUS_TX_RX_DATA mbTxRxData;
 
-const uint16_t wCrcTable[] = {
-	0x0000, 0xC0C1, 0xC181, 0x0140, 0xC301, 0x03C0, 0x0280, 0xC241,
-	0xC601, 0x06C0, 0x0780, 0xC741, 0x0500, 0xC5C1, 0xC481, 0x0440,
-	0xCC01, 0x0CC0, 0x0D80, 0xCD41, 0x0F00, 0xCFC1, 0xCE81, 0x0E40,
-	0x0A00, 0xCAC1, 0xCB81, 0x0B40, 0xC901, 0x09C0, 0x0880, 0xC841,
-	0xD801, 0x18C0, 0x1980, 0xD941, 0x1B00, 0xDBC1, 0xDA81, 0x1A40,
-	0x1E00, 0xDEC1, 0xDF81, 0x1F40, 0xDD01, 0x1DC0, 0x1C80, 0xDC41,
-	0x1400, 0xD4C1, 0xD581, 0x1540, 0xD701, 0x17C0, 0x1680, 0xD641,
-	0xD201, 0x12C0, 0x1380, 0xD341, 0x1100, 0xD1C1, 0xD081, 0x1040,
-	0xF001, 0x30C0, 0x3180, 0xF141, 0x3300, 0xF3C1, 0xF281, 0x3240,
-	0x3600, 0xF6C1, 0xF781, 0x3740, 0xF501, 0x35C0, 0x3480, 0xF441,
-	0x3C00, 0xFCC1, 0xFD81, 0x3D40, 0xFF01, 0x3FC0, 0x3E80, 0xFE41,
-	0xFA01, 0x3AC0, 0x3B80, 0xFB41, 0x3900, 0xF9C1, 0xF881, 0x3840,
-	0x2800, 0xE8C1, 0xE981, 0x2940, 0xEB01, 0x2BC0, 0x2A80, 0xEA41,
-	0xEE01, 0x2EC0, 0x2F80, 0xEF41, 0x2D00, 0xEDC1, 0xEC81, 0x2C40,
-	0xE401, 0x24C0, 0x2580, 0xE541, 0x2700, 0xE7C1, 0xE681, 0x2640,
-	0x2200, 0xE2C1, 0xE381, 0x2340, 0xE101, 0x21C0, 0x2080, 0xE041,
-	0xA001, 0x60C0, 0x6180, 0xA141, 0x6300, 0xA3C1, 0xA281, 0x6240,
-	0x6600, 0xA6C1, 0xA781, 0x6740, 0xA501, 0x65C0, 0x6480, 0xA441,
-	0x6C00, 0xACC1, 0xAD81, 0x6D40, 0xAF01, 0x6FC0, 0x6E80, 0xAE41,
-	0xAA01, 0x6AC0, 0x6B80, 0xAB41, 0x6900, 0xA9C1, 0xA881, 0x6840,
-	0x7800, 0xB8C1, 0xB981, 0x7940, 0xBB01, 0x7BC0, 0x7A80, 0xBA41,
-	0xBE01, 0x7EC0, 0x7F80, 0xBF41, 0x7D00, 0xBDC1, 0xBC81, 0x7C40,
-	0xB401, 0x74C0, 0x7580, 0xB541, 0x7700, 0xB7C1, 0xB681, 0x7640,
-	0x7200, 0xB2C1, 0xB381, 0x7340, 0xB101, 0x71C0, 0x7080, 0xB041,
-	0x5000, 0x90C1, 0x9181, 0x5140, 0x9301, 0x53C0, 0x5280, 0x9241,
-	0x9601, 0x56C0, 0x5780, 0x9741, 0x5500, 0x95C1, 0x9481, 0x5440,
-	0x9C01, 0x5CC0, 0x5D80, 0x9D41, 0x5F00, 0x9FC1, 0x9E81, 0x5E40,
-	0x5A00, 0x9AC1, 0x9B81, 0x5B40, 0x9901, 0x59C0, 0x5880, 0x9841,
-	0x8801, 0x48C0, 0x4980, 0x8941, 0x4B00, 0x8BC1, 0x8A81, 0x4A40,
-	0x4E00, 0x8EC1, 0x8F81, 0x4F40, 0x8D01, 0x4DC0, 0x4C80, 0x8C41,
-	0x4400, 0x84C1, 0x8581, 0x4540, 0x8701, 0x47C0, 0x4680, 0x8641,
-	0x8201, 0x42C0, 0x4380, 0x8341, 0x4100, 0x81C1, 0x8081, 0x4040};
-
-/**
- *******************************************************************************
- * @brief       increase data pointer
- *******************************************************************************
- */
-void incPtrData(void) {
-	++ptrData;
-	if (ptrData > ptrMax) {
-		ptrData = ptrMin;
-	}
-}
+const UINT16_TYPE stCrcTable[] = {
+	{0x0000}, {0xC1C0}, {0x81C1}, {0x4001}, {0x01C3}, {0xC003}, {0x8002}, {0x41C2},
+	{0x01C6}, {0xC006}, {0x8007}, {0x41C7}, {0x0005}, {0xC1C5}, {0x81C4}, {0x4004},
+	{0x01CC}, {0xC00C}, {0x800D}, {0x41CD}, {0x000F}, {0xC1CF}, {0x81CE}, {0x400E},
+	{0x000A}, {0xC1CA}, {0x81CB}, {0x400B}, {0x01C9}, {0xC009}, {0x8008}, {0x41C8},
+	{0x01D8}, {0xC018}, {0x8019}, {0x41D9}, {0x001B}, {0xC1DB}, {0x81DA}, {0x401A},
+	{0x001E}, {0xC1DE}, {0x81DF}, {0x401F}, {0x01DD}, {0xC01D}, {0x801C}, {0x41DC},
+	{0x0014}, {0xC1D4}, {0x81D5}, {0x4015}, {0x01D7}, {0xC017}, {0x8016}, {0x41D6},
+	{0x01D2}, {0xC012}, {0x8013}, {0x41D3}, {0x0011}, {0xC1D1}, {0x81D0}, {0x4010},
+	{0x01F0}, {0xC030}, {0x8031}, {0x41F1}, {0x0033}, {0xC1F3}, {0x81F2}, {0x4032},
+	{0x0036}, {0xC1F6}, {0x81F7}, {0x4037}, {0x01F5}, {0xC035}, {0x8034}, {0x41F4},
+	{0x003C}, {0xC1FC}, {0x81FD}, {0x403D}, {0x01FF}, {0xC03F}, {0x803E}, {0x41FE},
+	{0x01FA}, {0xC03A}, {0x803B}, {0x41FB}, {0x0039}, {0xC1F9}, {0x81F8}, {0x4038},
+	{0x0028}, {0xC1E8}, {0x81E9}, {0x4029}, {0x01EB}, {0xC02B}, {0x802A}, {0x41EA},
+	{0x01EE}, {0xC02E}, {0x802F}, {0x41EF}, {0x002D}, {0xC1ED}, {0x81EC}, {0x402C},
+	{0x01E4}, {0xC024}, {0x8025}, {0x41E5}, {0x0027}, {0xC1E7}, {0x81E6}, {0x4026},
+	{0x0022}, {0xC1E2}, {0x81E3}, {0x4023}, {0x01E1}, {0xC021}, {0x8020}, {0x41E0},
+	{0x01A0}, {0xC060}, {0x8061}, {0x41A1}, {0x0063}, {0xC1A3}, {0x81A2}, {0x4062},
+	{0x0066}, {0xC1A6}, {0x81A7}, {0x4067}, {0x01A5}, {0xC065}, {0x8064}, {0x41A4},
+	{0x006C}, {0xC1AC}, {0x81AD}, {0x406D}, {0x01AF}, {0xC06F}, {0x806E}, {0x41AE},
+	{0x01AA}, {0xC06A}, {0x806B}, {0x41AB}, {0x0069}, {0xC1A9}, {0x81A8}, {0x4068},
+	{0x0078}, {0xC1B8}, {0x81B9}, {0x4079}, {0x01BB}, {0xC07B}, {0x807A}, {0x41BA},
+	{0x01BE}, {0xC07E}, {0x807F}, {0x41BF}, {0x007D}, {0xC1BD}, {0x81BC}, {0x407C},
+	{0x01B4}, {0xC074}, {0x8075}, {0x41B5}, {0x0077}, {0xC1B7}, {0x81B6}, {0x4076},
+	{0x0072}, {0xC1B2}, {0x81B3}, {0x4073}, {0x01B1}, {0xC071}, {0x8070}, {0x41B0},
+	{0x0050}, {0xC190}, {0x8191}, {0x4051}, {0x0193}, {0xC053}, {0x8052}, {0x4192},
+	{0x0196}, {0xC056}, {0x8057}, {0x4197}, {0x0055}, {0xC195}, {0x8194}, {0x4054},
+	{0x019C}, {0xC05C}, {0x805D}, {0x419D}, {0x005F}, {0xC19F}, {0x819E}, {0x405E},
+	{0x005A}, {0xC19A}, {0x819B}, {0x405B}, {0x0199}, {0xC059}, {0x8058}, {0x4198},
+	{0x0188}, {0xC048}, {0x8049}, {0x4189}, {0x004B}, {0xC18B}, {0x818A}, {0x404A},
+	{0x004E}, {0xC18E}, {0x818F}, {0x404F}, {0x018D}, {0xC04D}, {0x804C}, {0x418C},
+	{0x0044}, {0xC184}, {0x8185}, {0x4045}, {0x0187}, {0xC047}, {0x8046}, {0x4186},
+	{0x0182}, {0xC042}, {0x8043}, {0x4183}, {0x0041}, {0xC181}, {0x8180}, {0x4040}
+};
 
 /**
 *******************************************************************************
 * @brief       calculate crc
 * @param[in]   ptrCell: pointer of data
-* @param[in]   length: length of data
-* @param[out]  Crc
+* @param[in]   length: length of data without CRC
+* @param[out]  crc
 *******************************************************************************
 */
-void crc16(uint8_t *ptrCell, uint16_t length) {
-	uint8_t nTemp;
-	UINT16_TYPE wCrcWord = {0xFFFF};
+void crc16(uint8_t *ptrCell, uint8_t length) {
+	uint8_t ucIndex;
+	UINT16_TYPE crcWord = {0xFFFF};
 
-	mbTxRxData.uartTxPtr->length = length + 2; //size of transmit data
 	while (length--) {
-		nTemp = *ptrCell++ ^ wCrcWord.word;
-		wCrcWord.word >>= 8;
-		wCrcWord.word ^= wCrcTable[nTemp];
+		ucIndex = crcWord.bytes.high_byte ^ *ptrCell++;
+		crcWord.bytes.high_byte = crcWord.bytes.low_byte ^ stCrcTable[ucIndex].bytes.high_byte;
+		crcWord.bytes.low_byte = stCrcTable[ucIndex].bytes.low_byte;
 	}
-	*ptrCell++ = wCrcWord.bytes.high_byte;
-	*ptrCell = wCrcWord.bytes.low_byte;
+	*ptrCell++ = crcWord.bytes.high_byte;
+	*ptrCell = crcWord.bytes.low_byte;
 }
 
 /**
 *******************************************************************************
 * @brief       check crc
 * @param[in]   ptrCell: pointer of data
-* @param[in]   length: length of data
+* @param[in]   length: length of data without CRC
 * @param[out]  TRUE or FALSE
 *******************************************************************************
 */
-uint8_t checkCrc16(const uint8_t *ptrCell, uint16_t length) {
-	uint8_t nTemp;
-	UINT16_TYPE wCrcWord = {0xFFFF};
+uint8_t checkCrc16(uint8_t *ptrCell, uint16_t length) {
+	uint8_t ucIndex;
+	UINT16_TYPE crcWord = {0xFFFF};
 
 	while (length--) {
-		nTemp = *ptrCell ^ wCrcWord.word;
-		++ptrCell;
-		if (ptrCell > ptrMax)
-			ptrCell = ptrMin;
-		wCrcWord.word >>= 8;
-		wCrcWord.word ^= wCrcTable[nTemp];
+		ucIndex = crcWord.bytes.high_byte ^ *ptrCell++;
+		crcWord.bytes.high_byte = crcWord.bytes.low_byte ^ stCrcTable[ucIndex].bytes.high_byte;
+		crcWord.bytes.low_byte = stCrcTable[ucIndex].bytes.low_byte;
 	}
-	if (wCrcWord.bytes.high_byte == *ptrCell) {
+	if (crcWord.bytes.high_byte == *ptrCell) {
 		++ptrCell;
-		if (ptrCell > ptrMax)
-			ptrCell = ptrMin;
-		if (wCrcWord.bytes.low_byte == *ptrCell)
+		if (crcWord.bytes.low_byte == *ptrCell)
 			return TRUE;
 	}
 	return FALSE;
@@ -127,29 +100,15 @@ uint8_t checkCrc16(const uint8_t *ptrCell, uint16_t length) {
 * @param[out]  none
 *******************************************************************************
 */
-#define EXCEPTION_RESP_LENGTH 0x02 //without CRC
+#define SIZE_OF_EXCEPTION_FRAME 0x05
 void mbReturnException(uint8_t exceptionCode) {
-	uint8_t *ptrTarget = mbTxRxData.uartTxPtr->buffer;
 
-	*ptrTarget++ = mbRequestFrame.mbFunction + 0x80;
-	*ptrTarget++ = exceptionCode;
+	PTR_EXCEPTION->slaveAdd = *mbTxRxData.ptrRxData;
+	PTR_EXCEPTION->functionCode = PTR_MODBUS_READ_REQ->functionCode + 0x80;
+	PTR_EXCEPTION->exceptionCode = exceptionCode;
 
-	crc16(mbTxRxData.uartTxPtr->buffer, EXCEPTION_RESP_LENGTH);
-}
-
-/**
-*******************************************************************************
-* @brief       mbCheckLimits for Exception 3
-* @param[in]   maxLimit = 0x7D0 or maxLimit = 0x7D
-* @param[out]  TRUE or FALSE
-* @details     none.
-*******************************************************************************
-*/
-uint8_t mbCheckLimits(uint16_t maxLimit) {
-	if (mbRequestFrame.mbNumOfRegOrCoil.word > 0x00 && mbRequestFrame.mbNumOfRegOrCoil.word < maxLimit)
-		return TRUE;
-	else
-		return FALSE;
+	crc16(mbTxRxData.ptrTxData, SIZE_OF_EXCEPTION_FRAME - 2);
+	mbTxRxData.txLength = SIZE_OF_EXCEPTION_FRAME;
 }
 
 /**
@@ -160,62 +119,75 @@ uint8_t mbCheckLimits(uint16_t maxLimit) {
 * @details     none.
 *******************************************************************************
 */
-#define MAX_QTY_OUTPUT 0x7D0
-#define MAX_QTY_REGISTER 0x7D
 void modbusRTU(void) {
-	if (mbTxRxData.uartRxPtr->length1 < MB_MIN_FRAME_SIZE) //return if there is no enough data
+	uint16_t tmp;
+	mbTxRxData.txLength = 0x00;
+	if (mbTxRxData.rxLength < MB_MIN_REQUEST_FRAME_SIZE) { //return if there is no enough data
 		return;
+	}
 
-	//ptrData = &(mbTxRxData.uartRxPtr->buffer[mbTxRxData.uartRxPtr->firstDataId]);
-	//ptrMax = &(mbTxRxData.uartRxPtr->buffer[UART_RX_BUFFER_SIZE - 1]);
-	//ptrMin = &(mbTxRxData.uartRxPtr->buffer[0]);
+	if (*mbTxRxData.ptrRxData == mbTxRxData.slaveAdd) {
+		if (checkCrc16(mbTxRxData.ptrRxData, mbTxRxData.rxLength - 2) == FALSE) {
+			return;
+		}
+		*mbTxRxData.ptrTxData = mbTxRxData.slaveAdd;
 
-	if (*ptrData == mbTxRxData.mbAddress){
-		incPtrData();
-		mbRequestFrame.mbFunction = *ptrData;
-		incPtrData();
-		mbRequestFrame.mbRegAddress.bytes.high_byte = *ptrData;
-		incPtrData();
-		mbRequestFrame.mbRegAddress.bytes.low_byte = *ptrData;
-		incPtrData();
-		mbRequestFrame.mbNumOfRegOrCoil.bytes.high_byte = *ptrData;
-		incPtrData();
-		mbRequestFrame.mbNumOfRegOrCoil.bytes.low_byte = *ptrData;
-		incPtrData();
+		//check address and quantity
+		switch (PTR_MODBUS_READ_REQ->functionCode) {
+			case FUNC_READ_DISCRETE_INPUTS:
+			case FUNC_READ_COILS:
+				tmp = wordEndianer(PTR_MODBUS_READ_REQ->quantity.word);
+				if (tmp == 0 || tmp > 0x07D0) {
+					mbReturnException(OUT_OF_MB_LIMIT);
+				}
+				break;
+		}
 
-		switch (mbRequestFrame.mbFunction) {
-			case MBFN_READ_COILS:
-				//if (checkCrc16(&(mbTxRxData.uartRxPtr->buffer1[mbTxRxData.uartRxPtr->firstDataId]), MB_MIN_FRAME_SIZE - 2)) {
-				//	if (mbCheckLimits(MAX_QTY_OUTPUT)) {
-				//		if (mbRequestFrame.mbRegAddress.word + mbRequestFrame.mbNumOfRegOrCoil.word < MB_COIL_SIZE) {
-				//			//mbReadCoilRegister();
-				//		}
-				//		else {
-				//			mbReturnException(OUT_OF_DATA_REGION);
-				//		}
-				//	}
-				//	else {
-				//		mbReturnException(OUT_OF_MB_LIMIT);
-				//	}
-				//}
+		switch (*(mbTxRxData.ptrRxData + 1)) {
+			case FUNC_READ_COILS:
+				tmp = wordEndianer(PTR_MODBUS_READ_REQ->startAddress.word) + wordEndianer(PTR_MODBUS_READ_REQ->quantity.word);
+				if (tmp > MB_COIL_SIZE) {
+					mbReturnException(OUT_OF_DATA_REGION);
+					break;
+				}
+				if (readCoils() == FALSE) {
+					mbReturnException(PROCESS_ERROR);
+				}
 				break;
-			case MBFN_READ_DISCRETE_INPUTS:
+			case FUNC_READ_DISCRETE_INPUTS:
+				tmp = wordEndianer(PTR_MODBUS_READ_REQ->startAddress.word) + wordEndianer(PTR_MODBUS_READ_REQ->quantity.word);
+				if (tmp > MB_INPUT_SIZE) {
+					mbReturnException(OUT_OF_DATA_REGION);
+					break;
+				}
+				if (readInputs() == FALSE) {
+					mbReturnException(PROCESS_ERROR);
+				}
 				break;
-			case MBFN_READ_HOLDING_REGISTERS:
+			case FUNC_READ_HOLDING_REGISTERS:
 				break;
-			case MBFN_READ_INPUT_REGISTERS:
+			case FUNC_READ_INPUT_REGISTERS:
 				break;
-			case MBFN_WRITE_SINGLE_COIL:
+			case FUNC_WRITE_SINGLE_COIL:
+				tmp = wordEndianer(PTR_MODBUS_WRITE_SINGLE_REQ->address.word);
+				if (tmp >= MB_COIL_SIZE) {
+					mbReturnException(OUT_OF_DATA_REGION);
+					break;
+				}
+				if (writeSingleCoil() == FALSE) {
+					mbReturnException(PROCESS_ERROR);
+				}
 				break;
-			case MBFN_WRITE_SINGLE_REGISTER:
+			case FUNC_WRITE_SINGLE_REGISTER:
 				break;
-			case MBFN_WRITE_MULTIPLE_COILS:
+			case FUNC_WRITE_MULTIPLE_COILS:
 				break;
-			case MBFN_WRITE_MULTIPLE_REGISTERS:
+			case FUNC_WRITE_MULTIPLE_REGISTERS:
 				break;
 			default:
+				mbReturnException(FUNCTION_UNSUPPORTED);
 				break;
 		}
 	}
 }
-
+/* * * END OF FILE * * */

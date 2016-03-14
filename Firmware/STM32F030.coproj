@@ -68,12 +68,7 @@
       <Option name="org.coocox.codebugger.gdbjtag.core.verify" value="1"/>
       <Option name="org.coocox.codebugger.gdbjtag.core.downloadFuction" value="Erase Effected"/>
       <Option name="org.coocox.codebugger.gdbjtag.core.defaultAlgorithm" value="STM32F05xx_64.elf"/>
-      <Option name="org.coocox.codebugger.gdbjtag.coredebugInRamInitCommands" value="cd C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/STM32F030_Output/Debug/bin
-restore STM32F030.elf
-set {unsigned int*}0xE000ED08 = 0x20000000
-set $sp = {unsigned int*}0x20000000
-set $pc = {unsigned int*}0x20000004
-"/>
+      <Option name="org.coocox.codebugger.gdbjtag.coredebugInRamInitCommands" value="cd C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/STM32F030_Output/Debug/bin restore STM32F030.elf set {unsigned int*}0xE000ED08 = 0x20000000 set $sp = {unsigned int*}0x20000000 set $pc = {unsigned int*}0x20000004 "/>
     </DebugOption>
     <ExcludeFile/>
   </Target>
@@ -85,24 +80,24 @@ set $pc = {unsigned int*}0x20000004
     <File name="CoOS/kernel/queue.c" path="CoOS/kernel/queue.c" type="1"/>
     <File name="cmsis_boot" path="" type="2"/>
     <File name="modbus.c" path="modbus.c" type="1"/>
-    <File name="CoOS/kernel/OsServiceReq.h" path="CoOS/kernel/OsServiceReq.h" type="1"/>
     <File name="cmsis_boot/startup" path="" type="2"/>
+    <File name="CoOS/kernel/OsServiceReq.h" path="CoOS/kernel/OsServiceReq.h" type="1"/>
     <File name="CoOS/Document/readme.txt" path="CoOS/Document/readme.txt" type="1"/>
     <File name="cmsis_core" path="" type="2"/>
     <File name="gpio.c" path="gpio.c" type="1"/>
-    <File name="stm32_lib/inc/stm32f0xx_gpio.h" path="stm32_lib/inc/stm32f0xx_gpio.h" type="1"/>
-    <File name="uart.c" path="uart.c" type="1"/>
     <File name="CoOS/kernel/OsTask.h" path="CoOS/kernel/OsTask.h" type="1"/>
+    <File name="uart.c" path="uart.c" type="1"/>
+    <File name="stm32_lib/inc/stm32f0xx_gpio.h" path="stm32_lib/inc/stm32f0xx_gpio.h" type="1"/>
     <File name="CoOS/portable/GCC" path="" type="2"/>
     <File name="cmsis_boot/stm32f0xx.h" path="cmsis_boot/stm32f0xx.h" type="1"/>
     <File name="stm32_lib/inc/stm32f0xx_usart.h" path="stm32_lib/inc/stm32f0xx_usart.h" type="1"/>
-    <File name="syscalls/syscalls.c" path="syscalls/syscalls.c" type="1"/>
     <File name="CoOS/kernel/timer.c" path="CoOS/kernel/timer.c" type="1"/>
+    <File name="syscalls/syscalls.c" path="syscalls/syscalls.c" type="1"/>
     <File name="gpio.h" path="gpio.h" type="1"/>
-    <File name="cmsis_core/core_cm0.h" path="cmsis_core/core_cm0.h" type="1"/>
-    <File name="stm32_lib/src/stm32f0xx_dma.c" path="stm32_lib/src/stm32f0xx_dma.c" type="1"/>
-    <File name="CoOS/kernel/task.c" path="CoOS/kernel/task.c" type="1"/>
     <File name="pub_s.h" path="pub_s.h" type="1"/>
+    <File name="stm32_lib/src/stm32f0xx_dma.c" path="stm32_lib/src/stm32f0xx_dma.c" type="1"/>
+    <File name="cmsis_core/core_cm0.h" path="cmsis_core/core_cm0.h" type="1"/>
+    <File name="CoOS/kernel/task.c" path="CoOS/kernel/task.c" type="1"/>
     <File name="modbus.h" path="modbus.h" type="1"/>
     <File name="CoOS/Document" path="" type="2"/>
     <File name="CoOS/portable/GCC/port.c" path="CoOS/portable/GCC/port.c" type="1"/>
@@ -119,11 +114,11 @@ set $pc = {unsigned int*}0x20000004
     <File name="CoOS/portable/OsArch.h" path="CoOS/portable/OsArch.h" type="1"/>
     <File name="CoOS/kernel/OsCore.h" path="CoOS/kernel/OsCore.h" type="1"/>
     <File name="CoOS/kernel/OsMutex.h" path="CoOS/kernel/OsMutex.h" type="1"/>
-    <File name="CoOS/kernel/sem.c" path="CoOS/kernel/sem.c" type="1"/>
-    <File name="CoOS/kernel/OsTimer.h" path="CoOS/kernel/OsTimer.h" type="1"/>
     <File name="stm32_lib/src/stm32f0xx_rcc.c" path="stm32_lib/src/stm32f0xx_rcc.c" type="1"/>
-    <File name="CoOS/kernel/OsQueue.h" path="CoOS/kernel/OsQueue.h" type="1"/>
+    <File name="CoOS/kernel/OsTimer.h" path="CoOS/kernel/OsTimer.h" type="1"/>
+    <File name="CoOS/kernel/sem.c" path="CoOS/kernel/sem.c" type="1"/>
     <File name="CoOS/kernel/CoOS.h" path="CoOS/kernel/CoOS.h" type="1"/>
+    <File name="CoOS/kernel/OsQueue.h" path="CoOS/kernel/OsQueue.h" type="1"/>
     <File name="CoOS/kernel/OsEvent.h" path="CoOS/kernel/OsEvent.h" type="1"/>
     <File name="stm32_lib/src/stm32f0xx_usart.c" path="stm32_lib/src/stm32f0xx_usart.c" type="1"/>
     <File name="stdio" path="" type="2"/>
@@ -135,8 +130,8 @@ set $pc = {unsigned int*}0x20000004
     <File name="cmsis_core/core_cmFunc.h" path="cmsis_core/core_cmFunc.h" type="1"/>
     <File name="CoOS/kernel/event.c" path="CoOS/kernel/event.c" type="1"/>
     <File name="stm32_lib" path="" type="2"/>
-    <File name="CoOS/kernel/flag.c" path="CoOS/kernel/flag.c" type="1"/>
     <File name="CoOS/kernel/utility.h" path="CoOS/kernel/utility.h" type="1"/>
+    <File name="CoOS/kernel/flag.c" path="CoOS/kernel/flag.c" type="1"/>
     <File name="CoOS/kernel/mm.c" path="CoOS/kernel/mm.c" type="1"/>
     <File name="stm32_lib/inc" path="" type="2"/>
     <File name="CoOS/kernel/OsError.h" path="CoOS/kernel/OsError.h" type="1"/>
@@ -151,8 +146,8 @@ set $pc = {unsigned int*}0x20000004
     <File name="CoOS/portable" path="" type="2"/>
     <File name="CoOS/kernel/serviceReq.c" path="CoOS/kernel/serviceReq.c" type="1"/>
     <File name="CoOS/kernel/OsMM.h" path="CoOS/kernel/OsMM.h" type="1"/>
-    <File name="pub_var.c" path="pub_var.c" type="1"/>
     <File name="CoOS/kernel/hook.c" path="CoOS/kernel/hook.c" type="1"/>
+    <File name="pub_var.c" path="pub_var.c" type="1"/>
     <File name="stm32_lib/src/stm32f0xx_gpio.c" path="stm32_lib/src/stm32f0xx_gpio.c" type="1"/>
     <File name="stm32_lib/src/stm32f0xx_misc.c" path="stm32_lib/src/stm32f0xx_misc.c" type="1"/>
     <File name="CoOS/kernel/coocox.h" path="CoOS/kernel/coocox.h" type="1"/>

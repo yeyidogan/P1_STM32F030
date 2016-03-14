@@ -21,10 +21,10 @@ typedef union {
 
 typedef struct {
 	uint8_t uart1_protocol;
-	uint8_t uart1_baudrate;
+	uint16_t uart1_baudrate;
 	uint8_t uart1_address;
 	uint8_t uart2_protocol;
-	uint8_t uart2_baudrate;
+	uint16_t uart2_baudrate;
 	uint8_t uart2_address;
 }PARAMETER_TYPE;
 

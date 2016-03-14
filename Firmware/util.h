@@ -6,6 +6,9 @@
 #ifndef __UTIL_H
 #define __UTIL_H
 
+#include <stdint.h>
+#include "pub_s.h"
+
 /* Public typedef */
 #define TRUE 0x01
 #define FALSE 0x00
@@ -13,5 +16,8 @@
 
 /* Public macro */
 /* Public variables */
+
+/* Public functions */
+extern uint16_t wordEndianer(uint16_t wordIn);
 
 #endif

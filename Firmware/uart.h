@@ -32,8 +32,6 @@ void taskUart1 (void *pdata);
 
 /* Private typedef */
 typedef struct {
-	//uint8_t firstDataId; //buffer cell id, to be read data
-	//uint8_t newDataId; //buffer cell id, to be written
 	uint8_t length1; //length of data to be read of buffer1
 	uint8_t length2; //length of data to be read of buffer1
 	uint8_t buffer1[UART_RX_BUFFER_SIZE];
