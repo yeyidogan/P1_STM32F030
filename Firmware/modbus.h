@@ -31,7 +31,7 @@ typedef struct {
 	UINT16_TYPE startAddress;
 	UINT16_TYPE quantity;
 	UINT16_TYPE crc;
-}MODBUS_READ_REQUEST_FRAME;
+}__attribute__((packed)) MODBUS_READ_REQUEST_FRAME;
 //0x01, 0x02, 0x03, 0x04 functions
 
 typedef struct {
@@ -40,7 +40,7 @@ typedef struct {
 	UINT16_TYPE address;
 	UINT16_TYPE value;
 	UINT16_TYPE crc;
-}MODBUS_WRITE_SINGLE_REQUEST_FRAME;
+}__attribute__((packed)) MODBUS_WRITE_SINGLE_REQUEST_FRAME;
 //0x05 and 0x06 functions
 
 typedef struct {
@@ -50,7 +50,7 @@ typedef struct {
 	UINT16_TYPE quantity;
 	uint8_t byteCount;
 	uint8_t value;
-}MODBUS_WRITE_MULTIPLE_COILS_REQUEST_FRAME;
+}__attribute__((packed)) MODBUS_WRITE_MULTIPLE_COILS_REQUEST_FRAME;
 //0x0F function
 
 typedef struct {
@@ -60,7 +60,7 @@ typedef struct {
 	UINT16_TYPE quantity;
 	uint8_t byteCount;
 	UINT16_TYPE value;
-}MODBUS_WRITE_MULTIPLE_REGISTERS_REQUEST_FRAME;
+}__attribute__((packed)) MODBUS_WRITE_MULTIPLE_REGISTERS_REQUEST_FRAME;
 //0x10 function
 
 typedef struct {
@@ -68,7 +68,7 @@ typedef struct {
 	uint8_t functionCode;
 	uint8_t exceptionCode;
 	UINT16_TYPE crc;
-}MODBUS_EXCEPTION_RESPONSE_FRAME;
+}__attribute__((packed)) MODBUS_EXCEPTION_RESPONSE_FRAME;
 
 typedef struct {
 	uint8_t slaveAdd;
@@ -76,7 +76,7 @@ typedef struct {
 	uint8_t byteCount;
 	uint8_t byte1;
 	UINT16_TYPE crc;
-}MODBUS_READ_BYTE_RESPONSE_FRAME;
+}__attribute__((packed)) MODBUS_READ_BYTE_RESPONSE_FRAME;
 
 typedef struct {
 	uint8_t slaveAdd;
@@ -84,7 +84,7 @@ typedef struct {
 	uint8_t byteCount;
 	UINT16_TYPE word1;
 	UINT16_TYPE crc;
-}MODBUS_READ_WORD_RESPONSE_FRAME;
+}__attribute__((packed)) MODBUS_READ_WORD_RESPONSE_FRAME;
 
 /* Private define */
 #define MB_MIN_REQUEST_FRAME_SIZE 0x08
@@ -101,6 +101,8 @@ typedef struct {
 #define PTR_READ_BYTE_RESP ((MODBUS_READ_BYTE_RESPONSE_FRAME *)mbTxRxData.ptrTxData)
 
 #define PTR_WRITE_SINGLE_COIL_RESP ((MODBUS_WRITE_SINGLE_REQUEST_FRAME *)mbTxRxData.ptrTxData)
+
+#define PTR_READ_HOLDING_REQ ((MODBUS_READ_WORD_RESPONSE_FRAME *)mbTxRxData.ptrTxData)
 
 enum {
 	FUNC_READ_COILS = 1, //8 bytes request frame
@@ -124,6 +126,7 @@ enum {
 /* Private variables */
 
 extern MODBUS_TX_RX_DATA mbTxRxData;
+extern uint16_t uiWordQty;
 
 /* Private functions */
 extern void modbusRTU(void);

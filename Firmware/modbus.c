@@ -47,6 +47,7 @@ const UINT16_TYPE stCrcTable[] = {
 	{0x0182}, {0xC042}, {0x8043}, {0x4183}, {0x0041}, {0xC181}, {0x8180}, {0x4040}
 };
 
+uint16_t uiWordQty = 0x00;
 /**
 *******************************************************************************
 * @brief       calculate crc
@@ -119,62 +120,78 @@ void mbReturnException(uint8_t exceptionCode) {
 * @details     none.
 *******************************************************************************
 */
-void modbusRTU(void) {
+void modbusRTU(void){
 	uint16_t tmp;
 	mbTxRxData.txLength = 0x00;
-	if (mbTxRxData.rxLength < MB_MIN_REQUEST_FRAME_SIZE) { //return if there is no enough data
+	if (mbTxRxData.rxLength < MB_MIN_REQUEST_FRAME_SIZE){ //return if there is not enough data
 		return;
 	}
 
-	if (*mbTxRxData.ptrRxData == mbTxRxData.slaveAdd) {
-		if (checkCrc16(mbTxRxData.ptrRxData, mbTxRxData.rxLength - 2) == FALSE) {
+	if (*mbTxRxData.ptrRxData == mbTxRxData.slaveAdd){
+		if (checkCrc16(mbTxRxData.ptrRxData, mbTxRxData.rxLength - 2) == FALSE){
 			return;
 		}
 		*mbTxRxData.ptrTxData = mbTxRxData.slaveAdd;
 
-		//check address and quantity
-		switch (PTR_MODBUS_READ_REQ->functionCode) {
-			case FUNC_READ_DISCRETE_INPUTS:
+		//check function code and quantity
+		switch (PTR_MODBUS_READ_REQ->functionCode){
 			case FUNC_READ_COILS:
+			case FUNC_READ_DISCRETE_INPUTS:
+			case FUNC_READ_HOLDING_REGISTERS:
+			case FUNC_READ_INPUT_REGISTERS:
+			case FUNC_WRITE_MULTIPLE_COILS:
+			case FUNC_WRITE_MULTIPLE_REGISTERS:
 				tmp = wordEndianer(PTR_MODBUS_READ_REQ->quantity.word);
-				if (tmp == 0 || tmp > 0x07D0) {
+				if (tmp == 0 || tmp > 0x07D0){
 					mbReturnException(OUT_OF_MB_LIMIT);
+					return;
 				}
 				break;
 		}
 
-		switch (*(mbTxRxData.ptrRxData + 1)) {
+		uiWordQty = wordEndianer(PTR_MODBUS_READ_REQ->quantity.word);
+
+		switch (PTR_MODBUS_READ_REQ->functionCode){
 			case FUNC_READ_COILS:
-				tmp = wordEndianer(PTR_MODBUS_READ_REQ->startAddress.word) + wordEndianer(PTR_MODBUS_READ_REQ->quantity.word);
-				if (tmp > MB_COIL_SIZE) {
+				tmp = wordEndianer(PTR_MODBUS_READ_REQ->startAddress.word) + uiWordQty;
+				if (tmp > MB_COIL_SIZE){
 					mbReturnException(OUT_OF_DATA_REGION);
 					break;
 				}
-				if (readCoils() == FALSE) {
+				if (readCoils() == FALSE){
 					mbReturnException(PROCESS_ERROR);
 				}
 				break;
 			case FUNC_READ_DISCRETE_INPUTS:
-				tmp = wordEndianer(PTR_MODBUS_READ_REQ->startAddress.word) + wordEndianer(PTR_MODBUS_READ_REQ->quantity.word);
+				tmp = wordEndianer(PTR_MODBUS_READ_REQ->startAddress.word) + uiWordQty;
 				if (tmp > MB_INPUT_SIZE) {
 					mbReturnException(OUT_OF_DATA_REGION);
 					break;
 				}
-				if (readInputs() == FALSE) {
+				if (readInputs() == FALSE){
 					mbReturnException(PROCESS_ERROR);
 				}
 				break;
 			case FUNC_READ_HOLDING_REGISTERS:
+				tmp = wordEndianer(PTR_MODBUS_READ_REQ->startAddress.word) + uiWordQty;
+				if (tmp > sizeOfHoldingRegister) {
+					mbReturnException(OUT_OF_DATA_REGION);
+					break;
+				}
+				tmp = wordEndianer(PTR_MODBUS_READ_REQ->startAddress.word);
+				if (readHoldingRegister(tmp) == FALSE){
+					mbReturnException(PROCESS_ERROR);
+				}
 				break;
 			case FUNC_READ_INPUT_REGISTERS:
 				break;
 			case FUNC_WRITE_SINGLE_COIL:
 				tmp = wordEndianer(PTR_MODBUS_WRITE_SINGLE_REQ->address.word);
-				if (tmp >= MB_COIL_SIZE) {
+				if (tmp >= MB_COIL_SIZE){
 					mbReturnException(OUT_OF_DATA_REGION);
 					break;
 				}
-				if (writeSingleCoil() == FALSE) {
+				if (writeSingleCoil() == FALSE){
 					mbReturnException(PROCESS_ERROR);
 				}
 				break;

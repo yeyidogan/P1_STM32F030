@@ -9,9 +9,14 @@
 
 /* Private macro */
 /* Private variables */
-uint32_t ulMfTmp;
-uint16_t uiMfTmp;
+uint32_t ulMfTmp;//, *ptruLong;
+uint16_t uiMfTmp, *ptruInt;
+UINT16_TYPE uistMfTmp;
+uint8_t *ptruChar;
 
+uint32_t ulPar1 = 0x01234567;
+
+extern const uint16_t sizeOfHoldingRegister; //defined at the end of this file
 /**
 *******************************************************************************
 * @brief       func 0x01, read coils, outputs
@@ -52,6 +57,46 @@ uint8_t readInputs(void){
 }
 /**
 *******************************************************************************
+* @brief       func 0x03, read holding registers
+* @param[in]
+* @param[in]
+* @param[out] application status TRUE or FALSE
+*******************************************************************************
+*/
+uint8_t readHoldingRegister(uint16_t indexOfHoldingRegister){
+	PTR_READ_HOLDING_REQ->functionCode = FUNC_READ_HOLDING_REGISTERS;
+	PTR_READ_HOLDING_REQ->byteCount = uiWordQty * 2;
+
+	ptruChar = (uint8_t *)&(PTR_READ_HOLDING_REQ->word1.word);
+
+	while (uiWordQty--){
+		switch (stHoldingRegArray[indexOfHoldingRegister].registerType){
+		case W_U16_PTR_VAL:
+			*ptruChar++ = 0x00;
+			*ptruChar++ = 0x00;
+			break;
+		case R_U16_PTR_VAL:
+		case RW_U16_PTR_VAL:
+			uistMfTmp.word = *stHoldingRegArray[indexOfHoldingRegister].ptrU16;
+			*ptruChar++ = uistMfTmp.bytes.high_byte;
+			*ptruChar++ = uistMfTmp.bytes.low_byte;
+			break;
+		case RW_U16_FROM_PTR_FUNC:
+			break;
+		case LAST_DUMMY_REGITER:
+			uiWordQty = 0x00;
+			break;
+		default:
+			break;
+		}
+		++indexOfHoldingRegister;
+	}
+	crc16(mbTxRxData.ptrTxData, 0x03 + PTR_READ_HOLDING_REQ->byteCount);
+	mbTxRxData.txLength = 0x05 + PTR_READ_HOLDING_REQ->byteCount;
+	return TRUE;
+}
+/**
+*******************************************************************************
 * @brief       func 0x05, write single coil
 * @param[in]
 * @param[in]
@@ -81,4 +126,35 @@ uint8_t writeSingleCoil(void){
 	mbTxRxData.txLength = sizeof(MODBUS_WRITE_SINGLE_REQUEST_FRAME);
 	return TRUE;
 }
+/**
+*******************************************************************************
+* @brief       r+w dummy function used if there is no r+w function
+* @param[in]
+* @param[out] application status TRUE
+*******************************************************************************
+*/
+uint16_t rwDummyFunc(void){
+	return TRUE;
+}
+/**
+*******************************************************************************
+* @brief       modbus holding register list
+*******************************************************************************
+*/
+const ST_MODBUS_HOLDING_REGISTER_TYPE stHoldingRegArray[] = {
+	{RW_U16_PTR_VAL,
+	(uint16_t *)&ulPar1 + 1,
+	rwDummyFunc,
+	rwDummyFunc,
+	START_OF_WORD_REGISTER},
+
+	{RW_U16_PTR_VAL,
+	((uint16_t *)&ulPar1),
+	rwDummyFunc,
+	rwDummyFunc,
+	END_OF_DWORD_REGISTER},
+
+	{LAST_DUMMY_REGITER}
+};
+const uint16_t sizeOfHoldingRegister = sizeof(stHoldingRegArray)/sizeof(ST_MODBUS_HOLDING_REGISTER_TYPE) - 1;
 /* * * END OF FILE * * */
