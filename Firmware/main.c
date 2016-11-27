@@ -129,6 +129,7 @@ void taskC (void* pdata) {
  *******************************************************************************
  */
 int main(void) {
+	uint16_t uiOsVersion;
 	//SystemInit(); startup içinde çaðýrýlýyor.
 	//SysTick_Config(SystemCoreClock / 100); CoInitOS function icinde tanimli.
 	setParameters();
@@ -138,6 +139,7 @@ int main(void) {
 	initUartDma();
 	uart1NvicConfig();
 
+	uiOsVersion = CoGetOSVersion();
 	CoInitOS(); /*!< Initial CooCox CoOS */
 	/*!< Create three tasks	*/
 	CoCreateTask((FUNCPtr)taskC,(void *)0,2,&taskC_stk[STACK_SIZE_TASKC-1],STACK_SIZE_TASKC);
