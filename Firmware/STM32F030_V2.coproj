@@ -10,11 +10,14 @@
         <Option name="SupportCPlusplus" value="0"/>
         <Option name="DEBUG" value="2"/>
         <Option name="WARNING" value="1"/>
-        <Includepaths>
-          <Includepath path="."/>
-        </Includepaths>
+        <Option name="STANDARD" value="5"/>
+        <Option name="STANDARDCPP" value="3"/>
+        <Option name="ADVANCES" value="0"/>
+        <Includepaths/>
         <DefinedSymbols>
           <Define name="STM32F030R8T6"/>
+          <Define name="STM32F030"/>
+          <Define name="USE_STDPERIPH_DRIVER"/>
         </DefinedSymbols>
       </Compile>
       <Link useDefault="0">
@@ -48,13 +51,13 @@
     <DebugOption>
       <Option name="org.coocox.codebugger.gdbjtag.core.adapter" value="ST-Link"/>
       <Option name="org.coocox.codebugger.gdbjtag.core.debugMode" value="SWD"/>
-      <Option name="org.coocox.codebugger.gdbjtag.core.clockDiv" value="1M"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.clockDiv" value="2M"/>
       <Option name="org.coocox.codebugger.gdbjtag.corerunToMain" value="1"/>
       <Option name="org.coocox.codebugger.gdbjtag.core.jlinkgdbserver" value=""/>
       <Option name="org.coocox.codebugger.gdbjtag.core.userDefineGDBScript" value=""/>
       <Option name="org.coocox.codebugger.gdbjtag.core.targetEndianess" value="0"/>
       <Option name="org.coocox.codebugger.gdbjtag.core.jlinkResetMode" value="Type 0: Normal"/>
-      <Option name="org.coocox.codebugger.gdbjtag.core.resetMode" value="SYSRESETREQ"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.resetMode" value="HW RESET"/>
       <Option name="org.coocox.codebugger.gdbjtag.core.ifSemihost" value="0"/>
       <Option name="org.coocox.codebugger.gdbjtag.core.ifCacheRom" value="1"/>
       <Option name="org.coocox.codebugger.gdbjtag.core.ipAddress" value="127.0.0.1"/>
@@ -72,95 +75,108 @@
   </Components>
   <LocalComponents/>
   <Files>
-    <File name="components/CooCox_CoOS/kernel/utility.h" path="components/coocox-master/CooCox_CoOS/Source/kernel/utility.h" type="1"/>
     <File name="components/CooCox_CoOS/kernel/mbox.c" path="components/coocox-master/CooCox_CoOS/Source/kernel/mbox.c" type="1"/>
-    <File name="cmsis_boot" path="" type="2"/>
-    <File name="components/cmsis_core/core_cmInstr.h" path="components/coocox-master/cmsis_core/source/core_cmInstr.h" type="1"/>
-    <File name="modbus.c" path="modbus.c" type="1"/>
-    <File name="components/cmsis_core/core_cmFunc.h" path="components/coocox-master/cmsis_core/source/core_cmFunc.h" type="1"/>
-    <File name="components/cmsis_core" path="" type="2"/>
-    <File name="cmsis_boot/startup" path="" type="2"/>
+    <File name="driver/i2c.c" path="driver/i2c.c" type="1"/>
+    <File name="app/util.c" path="app/util.c" type="1"/>
+    <File name="app/main.h" path="app/main.h" type="1"/>
+    <File name="driver/uart.c" path="driver/uart.c" type="1"/>
     <File name="components/CooCox_CoOS/kernel/CoOS.h" path="components/coocox-master/CooCox_CoOS/Source/kernel/CoOS.h" type="1"/>
-    <File name="components/CooCox_CoOS/kernel/mutex.c" path="components/coocox-master/CooCox_CoOS/Source/kernel/mutex.c" type="1"/>
-    <File name="components/CooCox_CoOS/kernel/flag.c" path="components/coocox-master/CooCox_CoOS/Source/kernel/flag.c" type="1"/>
-    <File name="components/cmsis_core/arm_common_tables.h" path="components/coocox-master/cmsis_core/source/arm_common_tables.h" type="1"/>
     <File name="components/cmsis_core/arm_const_structs.h" path="components/coocox-master/cmsis_core/source/arm_const_structs.h" type="1"/>
-    <File name="util.c" path="util.c" type="1"/>
-    <File name="gpio.c" path="gpio.c" type="1"/>
-    <File name="uart.c" path="uart.c" type="1"/>
-    <File name="stm32_lib/inc/stm32f0xx_gpio.h" path="stm32_lib/inc/stm32f0xx_gpio.h" type="1"/>
+    <File name="components/CooCox_CoOS/kernel/flag.c" path="components/coocox-master/CooCox_CoOS/Source/kernel/flag.c" type="1"/>
     <File name="stm32_lib/src/modbus_func.h" path="modbus_func.h" type="1"/>
-    <File name="config/OsConfig.h" path="config/OsConfig.h" type="1"/>
+    <File name="app/stepper_motor.h" path="app/stepper_motor.h" type="1"/>
     <File name="components/cmsis_core/core_sc300.h" path="components/coocox-master/cmsis_core/source/core_sc300.h" type="1"/>
-    <File name="components/CooCox_CoOS/kernel/mm.c" path="components/coocox-master/CooCox_CoOS/Source/kernel/mm.c" type="1"/>
-    <File name="cmsis_boot/stm32f0xx.h" path="cmsis_boot/stm32f0xx.h" type="1"/>
     <File name="stm32_lib/inc/stm32f0xx_usart.h" path="stm32_lib/inc/stm32f0xx_usart.h" type="1"/>
-    <File name="components/CooCox_CoOS/kernel/OsKernelHeap.h" path="components/coocox-master/CooCox_CoOS/Source/kernel/OsKernelHeap.h" type="1"/>
-    <File name="gpio.h" path="gpio.h" type="1"/>
     <File name="syscalls/syscalls.c" path="syscalls/syscalls.c" type="1"/>
-    <File name="stm32_lib/src/stm32f0xx_dma.c" path="stm32_lib/src/stm32f0xx_dma.c" type="1"/>
-    <File name="pub_s.h" path="pub_s.h" type="1"/>
-    <File name="components/CooCox_CoOS/kernel/coocox.h" path="components/coocox-master/CooCox_CoOS/Source/kernel/coocox.h" type="1"/>
-    <File name="modbus_func.c" path="modbus_func.c" type="1"/>
-    <File name="modbus.h" path="modbus.h" type="1"/>
+    <File name="components/CooCox_CoOS/kernel/OsKernelHeap.h" path="components/coocox-master/CooCox_CoOS/Source/kernel/OsKernelHeap.h" type="1"/>
     <File name="components/CooCox_CoOS/kernel/core.c" path="components/coocox-master/CooCox_CoOS/Source/kernel/core.c" type="1"/>
-    <File name="components/CooCox_CoOS/kernel/OsTimer.h" path="components/coocox-master/CooCox_CoOS/Source/kernel/OsTimer.h" type="1"/>
-    <File name="pub_var.h" path="pub_var.h" type="1"/>
     <File name="stm32_lib/inc/stm32f0xx_dma.h" path="stm32_lib/inc/stm32f0xx_dma.h" type="1"/>
     <File name="components/CooCox_CoOS/portable" path="" type="2"/>
-    <File name="components/CooCox_CoOS/kernel/OsMM.h" path="components/coocox-master/CooCox_CoOS/Source/kernel/OsMM.h" type="1"/>
+    <File name="driver/i2c.h" path="driver/i2c.h" type="1"/>
+    <File name="driver/gpio.h" path="driver/gpio.h" type="1"/>
     <File name="components/CooCox_CoOS/portable/arch.c" path="components/coocox-master/CooCox_CoOS/Source/portable/arch.c" type="1"/>
     <File name="components/cmsis_core/core_cm4_simd.h" path="components/coocox-master/cmsis_core/source/core_cm4_simd.h" type="1"/>
+    <File name="app/stepper_motor.c" path="app/stepper_motor.c" type="1"/>
     <File name="components/CooCox_CoOS/kernel/serviceReq.c" path="components/coocox-master/CooCox_CoOS/Source/kernel/serviceReq.c" type="1"/>
-    <File name="uart.h" path="uart.h" type="1"/>
     <File name="components/CooCox_CoOS/kernel/OsTime.h" path="components/coocox-master/CooCox_CoOS/Source/kernel/OsTime.h" type="1"/>
+    <File name="driver/timer.c" path="driver/timer.c" type="1"/>
+    <File name="stm32_lib/src/stm32f0xx_rcc.c" path="stm32_lib/src/stm32f0xx_rcc.c" type="1"/>
+    <File name="components/cmsis_core/core_cm0plus.h" path="components/coocox-master/cmsis_core/source/core_cm0plus.h" type="1"/>
+    <File name="stm32_lib/src/stm32f0xx_i2c.c" path="stm32_lib/src/stm32f0xx_i2c.c" type="1"/>
+    <File name="components/cmsis_core/core_sc000.h" path="components/coocox-master/cmsis_core/source/core_sc000.h" type="1"/>
+    <File name="app/hdc1080.h" path="app/hdc1080.h" type="1"/>
+    <File name="components/CooCox_CoOS/kernel/OsTask.h" path="components/coocox-master/CooCox_CoOS/Source/kernel/OsTask.h" type="1"/>
+    <File name="cmsis_boot/startup/startup_stm32f0xx.s" path="cmsis_boot/startup/startup_stm32f0xx.s" type="1"/>
+    <File name="components/CooCox_CoOS/kernel/OsQueue.h" path="components/coocox-master/CooCox_CoOS/Source/kernel/OsQueue.h" type="1"/>
+    <File name="app/par_enums.h" path="app/par_enums.h" type="1"/>
+    <File name="components/CooCox_CoOS/kernel/task.c" path="components/coocox-master/CooCox_CoOS/Source/kernel/task.c" type="1"/>
+    <File name="components/CooCox_CoOS/kernel/sem.c" path="components/coocox-master/CooCox_CoOS/Source/kernel/sem.c" type="1"/>
+    <File name="driver/gpio.c" path="driver/gpio.c" type="1"/>
+    <File name="components/cmsis_core/core_cm3.h" path="components/coocox-master/cmsis_core/source/core_cm3.h" type="1"/>
+    <File name="stm32_lib/inc" path="" type="2"/>
+    <File name="components/CooCox_CoOS/kernel/kernelHeap.c" path="components/coocox-master/CooCox_CoOS/Source/kernel/kernelHeap.c" type="1"/>
+    <File name="stm32_lib/inc/stm32f0xx_rcc.h" path="stm32_lib/inc/stm32f0xx_rcc.h" type="1"/>
+    <File name="components/CooCox_CoOS/kernel/time.c" path="components/coocox-master/CooCox_CoOS/Source/kernel/time.c" type="1"/>
+    <File name="components/CooCox_CoOS/kernel/queue.c" path="components/coocox-master/CooCox_CoOS/Source/kernel/queue.c" type="1"/>
+    <File name="components/cmsis_core/core_cm4.h" path="components/coocox-master/cmsis_core/source/core_cm4.h" type="1"/>
+    <File name="app/util.h" path="app/util.h" type="1"/>
+    <File name="stm32_lib/src/stm32f0xx_gpio.c" path="stm32_lib/src/stm32f0xx_gpio.c" type="1"/>
+    <File name="driver/uart.h" path="driver/uart.h" type="1"/>
+    <File name="components/CooCox_CoOS/kernel/OsEvent.h" path="components/coocox-master/CooCox_CoOS/Source/kernel/OsEvent.h" type="1"/>
+    <File name="components/CooCox_CoOS" path="" type="2"/>
+    <File name="app/hdc1080.c" path="app/hdc1080.c" type="1"/>
+    <File name="components/CooCox_CoOS/kernel/utility.h" path="components/coocox-master/CooCox_CoOS/Source/kernel/utility.h" type="1"/>
+    <File name="stm32_lib/inc/stm32f0xx_i2c.h" path="stm32_lib/inc/stm32f0xx_i2c.h" type="1"/>
+    <File name="app" path="" type="2"/>
+    <File name="app/modbus.h" path="app/modbus.h" type="1"/>
+    <File name="cmsis_boot" path="" type="2"/>
+    <File name="components/cmsis_core/core_cmInstr.h" path="components/coocox-master/cmsis_core/source/core_cmInstr.h" type="1"/>
+    <File name="app/modbus_func.h" path="app/modbus_func.h" type="1"/>
+    <File name="components/cmsis_core" path="" type="2"/>
+    <File name="components/cmsis_core/core_cmFunc.h" path="components/coocox-master/cmsis_core/source/core_cmFunc.h" type="1"/>
+    <File name="cmsis_boot/startup" path="" type="2"/>
+    <File name="components/CooCox_CoOS/kernel/mutex.c" path="components/coocox-master/CooCox_CoOS/Source/kernel/mutex.c" type="1"/>
+    <File name="components/cmsis_core/arm_common_tables.h" path="components/coocox-master/cmsis_core/source/arm_common_tables.h" type="1"/>
+    <File name="stm32_lib/inc/stm32f0xx_gpio.h" path="stm32_lib/inc/stm32f0xx_gpio.h" type="1"/>
+    <File name="app/pub_var.h" path="app/pub_var.h" type="1"/>
+    <File name="config/OsConfig.h" path="config/OsConfig.h" type="1"/>
+    <File name="components/CooCox_CoOS/kernel/mm.c" path="components/coocox-master/CooCox_CoOS/Source/kernel/mm.c" type="1"/>
+    <File name="cmsis_boot/stm32f0xx.h" path="cmsis_boot/stm32f0xx.h" type="1"/>
+    <File name="stm32_lib/src/stm32f0xx_dma.c" path="stm32_lib/src/stm32f0xx_dma.c" type="1"/>
+    <File name="components/CooCox_CoOS/kernel/coocox.h" path="components/coocox-master/CooCox_CoOS/Source/kernel/coocox.h" type="1"/>
+    <File name="app/modbus_func.c" path="app/modbus_func.c" type="1"/>
+    <File name="components/CooCox_CoOS/kernel/OsTimer.h" path="components/coocox-master/CooCox_CoOS/Source/kernel/OsTimer.h" type="1"/>
+    <File name="components/CooCox_CoOS/kernel/OsMM.h" path="components/coocox-master/CooCox_CoOS/Source/kernel/OsMM.h" type="1"/>
+    <File name="driver" path="" type="2"/>
+    <File name="app/modbus.c" path="app/modbus.c" type="1"/>
+    <File name="app/pub_var.c" path="app/pub_var.c" type="1"/>
     <File name="stm32_lib/inc/stm32f0xx_misc.h" path="stm32_lib/inc/stm32f0xx_misc.h" type="1"/>
     <File name="components/CooCox_CoOS/kernel/Ostimer.c" path="components/coocox-master/CooCox_CoOS/Source/kernel/Ostimer.c" type="1"/>
-    <File name="components/cmsis_core/core_cm0plus.h" path="components/coocox-master/cmsis_core/source/core_cm0plus.h" type="1"/>
-    <File name="stm32_lib/src/stm32f0xx_rcc.c" path="stm32_lib/src/stm32f0xx_rcc.c" type="1"/>
-    <File name="components/cmsis_core/core_sc000.h" path="components/coocox-master/cmsis_core/source/core_sc000.h" type="1"/>
     <File name="stm32_lib/src/stm32f0xx_usart.c" path="stm32_lib/src/stm32f0xx_usart.c" type="1"/>
+    <File name="app/gpio.h" path="driver/gpio.h" type="1"/>
     <File name="components/cmsis_core/core_cm0.h" path="components/coocox-master/cmsis_core/source/core_cm0.h" type="1"/>
-    <File name="cmsis_boot/startup/startup_stm32f0xx.s" path="cmsis_boot/startup/startup_stm32f0xx.s" type="1"/>
-    <File name="components/CooCox_CoOS/kernel/OsTask.h" path="components/coocox-master/CooCox_CoOS/Source/kernel/OsTask.h" type="1"/>
     <File name="cmsis_boot/stm32f0xx_conf.h" path="cmsis_boot/stm32f0xx_conf.h" type="1"/>
-    <File name="components/CooCox_CoOS/kernel/OsQueue.h" path="components/coocox-master/CooCox_CoOS/Source/kernel/OsQueue.h" type="1"/>
     <File name="components/CooCox_CoOS/kernel/OsMutex.h" path="components/coocox-master/CooCox_CoOS/Source/kernel/OsMutex.h" type="1"/>
-    <File name="components/CooCox_CoOS/kernel/task.c" path="components/coocox-master/CooCox_CoOS/Source/kernel/task.c" type="1"/>
     <File name="cmsis_boot/system_stm32f0xx.c" path="cmsis_boot/system_stm32f0xx.c" type="1"/>
     <File name="components/CooCox_CoOS/portable/GCC/port.c" path="components/coocox-master/CooCox_CoOS/Source/portable/GCC/port.c" type="1"/>
-    <File name="components/CooCox_CoOS/kernel/sem.c" path="components/coocox-master/CooCox_CoOS/Source/kernel/sem.c" type="1"/>
     <File name="stm32_lib" path="" type="2"/>
     <File name="config" path="" type="2"/>
     <File name="components/CooCox_CoOS/kernel/OsError.h" path="components/coocox-master/CooCox_CoOS/Source/kernel/OsError.h" type="1"/>
-    <File name="components/cmsis_core/core_cm3.h" path="components/coocox-master/cmsis_core/source/core_cm3.h" type="1"/>
-    <File name="stm32_lib/inc" path="" type="2"/>
     <File name="components/CooCox_CoOS/kernel/utility.c" path="components/coocox-master/CooCox_CoOS/Source/kernel/utility.c" type="1"/>
-    <File name="components/CooCox_CoOS/kernel/kernelHeap.c" path="components/coocox-master/CooCox_CoOS/Source/kernel/kernelHeap.c" type="1"/>
+    <File name="app/main.c" path="app/main.c" type="1"/>
     <File name="components/CooCox_CoOS/kernel/OsCore.h" path="components/coocox-master/CooCox_CoOS/Source/kernel/OsCore.h" type="1"/>
     <File name="components/CooCox_CoOS/kernel/event.c" path="components/coocox-master/CooCox_CoOS/Source/kernel/event.c" type="1"/>
     <File name="components/CooCox_CoOS/portable/GCC" path="" type="2"/>
     <File name="components/CooCox_CoOS/kernel/OsFlag.h" path="components/coocox-master/CooCox_CoOS/Source/kernel/OsFlag.h" type="1"/>
-    <File name="stm32_lib/inc/stm32f0xx_rcc.h" path="stm32_lib/inc/stm32f0xx_rcc.h" type="1"/>
-    <File name="components/CooCox_CoOS/kernel/time.c" path="components/coocox-master/CooCox_CoOS/Source/kernel/time.c" type="1"/>
-    <File name="par_enums.h" path="par_enums.h" type="1"/>
     <File name="components/CooCox_CoOS/portable/OsArch.h" path="components/coocox-master/CooCox_CoOS/Source/portable/OsArch.h" type="1"/>
     <File name="components/CooCox_CoOS/kernel" path="" type="2"/>
     <File name="syscalls" path="" type="2"/>
-    <File name="components/CooCox_CoOS/kernel/queue.c" path="components/coocox-master/CooCox_CoOS/Source/kernel/queue.c" type="1"/>
-    <File name="components/cmsis_core/core_cm4.h" path="components/coocox-master/cmsis_core/source/core_cm4.h" type="1"/>
+    <File name="driver/timer.h" path="driver/timer.h" type="1"/>
     <File name="cmsis_boot/system_stm32f0xx.h" path="cmsis_boot/system_stm32f0xx.h" type="1"/>
-    <File name="modbus_func.h" path="modbus_func.h" type="1"/>
     <File name="components" path="" type="2"/>
-    <File name="pub_var.c" path="pub_var.c" type="1"/>
-    <File name="stm32_lib/src/stm32f0xx_gpio.c" path="stm32_lib/src/stm32f0xx_gpio.c" type="1"/>
     <File name="components/CooCox_CoOS/kernel/OsServiceReq.h" path="components/coocox-master/CooCox_CoOS/Source/kernel/OsServiceReq.h" type="1"/>
-    <File name="components/CooCox_CoOS/kernel/OsEvent.h" path="components/coocox-master/CooCox_CoOS/Source/kernel/OsEvent.h" type="1"/>
     <File name="stm32_lib/src/stm32f0xx_misc.c" path="stm32_lib/src/stm32f0xx_misc.c" type="1"/>
-    <File name="components/CooCox_CoOS" path="" type="2"/>
-    <File name="main.c" path="main.c" type="1"/>
     <File name="stm32_lib/src" path="" type="2"/>
-    <File name="util.h" path="util.h" type="1"/>
     <File name="components/cmsis_core/arm_math.h" path="components/coocox-master/cmsis_core/source/arm_math.h" type="1"/>
     <File name="components/CooCox_CoOS/kernel/hook.c" path="components/coocox-master/CooCox_CoOS/Source/kernel/hook.c" type="1"/>
   </Files>

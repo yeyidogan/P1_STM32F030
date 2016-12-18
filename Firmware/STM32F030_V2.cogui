@@ -15,60 +15,58 @@
 <part id="2"/>
 <part id="3"/>
 <part id="4"/>
-<part id="5"/>
-<part id="6"/>
-<part id="7"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="modbus.c" partName="modbus.c" path="C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/modbus.c" title="modbus.c" tooltip="C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/modbus.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/STM32F030_V2/modbus.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="7409" selectionTopPixel="2567"/>
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="hdc1080.c" partName="hdc1080.c" path="C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/app/hdc1080.c" title="hdc1080.c" tooltip="C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/app/hdc1080.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/STM32F030_V2/app/hdc1080.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4851" selectionTopPixel="2183"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="modbus.h" partName="modbus.h" path="C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/modbus.h" title="modbus.h" tooltip="C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/modbus.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/STM32F030_V2/modbus.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="10" selectionOffset="3692" selectionTopPixel="1710"/>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="i2c.c" partName="i2c.c" path="C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/driver/i2c.c" title="i2c.c" tooltip="C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/driver/i2c.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/STM32F030_V2/driver/i2c.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="10" selectionOffset="596" selectionTopPixel="47"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="modbus_func.c" partName="modbus_func.c" path="C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/modbus_func.c" title="modbus_func.c" tooltip="C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/modbus_func.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/STM32F030_V2/modbus_func.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2575" selectionTopPixel="1118"/>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="hdc1080.h" partName="hdc1080.h" path="C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/app/hdc1080.h" title="hdc1080.h" tooltip="C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/app/hdc1080.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/STM32F030_V2/app/hdc1080.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="928" selectionTopPixel="275"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="modbus_func.h" partName="modbus_func.h" path="C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/modbus_func.h" title="modbus_func.h" tooltip="C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/modbus_func.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/STM32F030_V2/modbus_func.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1386" selectionTopPixel="493"/>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="util.c" partName="util.c" path="C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/app/util.c" title="util.c" tooltip="C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/app/util.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/STM32F030_V2/app/util.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="125"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="gpio.c" partName="gpio.c" path="C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/gpio.c" title="gpio.c" tooltip="C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/gpio.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/STM32F030_V2/gpio.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="14" selectionOffset="2146" selectionTopPixel="823"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="uart.c" partName="uart.c" path="C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/uart.c" title="uart.c" tooltip="C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/uart.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/STM32F030_V2/uart.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="9" selectionOffset="8656" selectionTopPixel="3769"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="pub_s.h" partName="pub_s.h" path="C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/pub_s.h" title="pub_s.h" tooltip="C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/pub_s.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/STM32F030_V2/pub_s.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="11" selectionOffset="469" selectionTopPixel="0"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/main.c" title="main.c" tooltip="C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/main.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/STM32F030_V2/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4054" selectionTopPixel="1949"/>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/app/main.c" title="main.c" tooltip="C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/app/main.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/STM32F030_V2/app/main.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3990" selectionTopPixel="1845"/>
 </editor>
 </editors>
 <views>
 <view id="org.eclipse.debug.ui.ExpressionView" partName="Expressions">
 <viewState>
-<ExpressionKeySet ExpKeys="uart1Tx,"/>
+<ExpressionKeySet ExpKeys="stTempHum,ucI2CTxBuf,"/>
 </viewState>
 </view>
+<view id="org.eclipse.ui.views.ProgressView" partName="Progress">
+<viewState/>
+</view>
 <view id="org.coocox.builder.ui.views.ProjectView" partName="Project">
-<viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="7">
+<viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="10">
 <expanded>
 <element path="/STM32F030_V2"/>
+<element path="/STM32F030_V2/app"/>
+<element path="/STM32F030_V2/cmsis_boot"/>
+<element path="/STM32F030_V2/cmsis_boot/startup"/>
 <element path="/STM32F030_V2/components"/>
+<element path="/STM32F030_V2/components/cmsis_core"/>
 <element path="/STM32F030_V2/config"/>
+<element path="/STM32F030_V2/driver"/>
 <element path="/STM32F030_V2/stm32_lib"/>
+<element path="/STM32F030_V2/stm32_lib/inc"/>
+<element path="/STM32F030_V2/stm32_lib/src"/>
 </expanded>
+<selection>
+<element path="/STM32F030_V2/app/util.c"/>
+</selection>
 </viewState>
 </view>
 <view id="org.coocox.codebugger.trace.ui.traceview" partName="Semihosting">
@@ -90,6 +88,11 @@
 </view>
 <view id="org.eclipse.ui.console.ConsoleView" partName="Console">
 <viewState/>
+</view>
+<view id="org.eclipse.cdt.debug.ui.memory.memorybrowser.MemoryBrowser" partName="Memory Browser">
+<viewState>
+<MemoryBroser ComboItemsValue="0x200004ac;" FocuseTabIndex="0" TabsValue="" TextValue="0x200004ac" horizontalPosition="0" verticalPosition="0"/>
+</viewState>
 </view>
 <view id="org.eclipse.debug.ui.VariableView" partName="Variables">
 <viewState/>
@@ -117,8 +120,8 @@
 <hide_menu_item_id id="org.coocox.codebugger.configuration.showMemoryBrowserAction"/>
 <hide_menu_item_id id="org.coocox.codebugger.configuration.showVariablesAction"/>
 <hide_menu_item_id id="org.coocox.builder.ui.openProjectExplorerAction"/>
-<hide_menu_item_id id="org.coocox.codebugger.trace.actions.ShowTraceControlAction"/>
 <hide_menu_item_id id="org.eclipse.debug.ui.commands.TerminateAndRelaunch"/>
+<hide_menu_item_id id="org.coocox.codebugger.trace.actions.ShowTraceControlAction"/>
 <hide_menu_item_id id="org.coocox.codebugger.configuration.showRegistersAction"/>
 <hide_toolbar_item_id id="org.eclipse.cdt.debug.internal.ui.actions.ToggleInstructionStepModeAction"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
@@ -128,6 +131,7 @@
 <view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="org.eclipse.search.ui.views.SearchView"/>
 <view id="org.eclipse.cdt.ui.typeHierarchy"/>
+<view id="org.eclipse.ui.views.ProgressView"/>
 <fastViewBars/>
 <layout>
 <mainWindow>
@@ -147,16 +151,18 @@
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@741de9" ratio="0.64050233" ratioLeft="408" ratioRight="229" relationship="4" relative="org.eclipse.ui.internal.ViewStack@157da63">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@741de9" ratio="0.7566719" ratioLeft="482" ratioRight="155" relationship="4" relative="org.eclipse.ui.internal.ViewStack@157da63">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.search.ui.views.SearchView" label="Search"/>
 <page content="org.eclipse.cdt.ui.typeHierarchy" label="Type Hierarchy"/>
+<page content="org.eclipse.ui.views.ProgressView" label="Progress"/>
 <page content="org.eclipse.ui.views.ProblemView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
 <part id="2"/>
+<part id="3"/>
 </presentation>
 </folder>
 </info>
@@ -222,40 +228,58 @@
 <view id="org.coocox.codebugger.trace.ui.traceview"/>
 <view id="org.eclipse.debug.ui.VariableView"/>
 <view id="org.eclipse.debug.ui.ExpressionView"/>
+<view id="org.eclipse.cdt.debug.ui.memory.memorybrowser.MemoryBrowser"/>
 <fastViewBars/>
 <viewLayoutRec closeable="false" id="org.eclipse.debug.ui.DebugView"/>
-<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="org.eclipse.ui.internal.ViewStack@97048e">&#x0A;<folder activePageID="org.coocox.builder.ui.views.ProjectView" appearance="2" expanded="2">&#x0A;<page content="org.coocox.builder.ui.views.ProjectView" label="Project"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<layout>
+<mainWindow>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@97048e">
+<folder activePageID="org.coocox.builder.ui.views.ProjectView" appearance="2" expanded="2">
+<page content="org.coocox.builder.ui.views.ProjectView" label="Project"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="stickyFolderRight" ratio="0.7496318" ratioLeft="1018" ratioRight="340" relationship="2" relative="org.eclipse.ui.internal.ViewStack@97048e">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<info folder="true" part="stickyFolderRight" ratio="0.7496318" ratioLeft="1018" ratioRight="340" relationship="2" relative="org.eclipse.ui.internal.ViewStack@97048e">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@1af431c" ratio="0.48822606" ratioLeft="311" ratioRight="326" relationship="4" relative="org.eclipse.ui.internal.ViewStack@97048e">&#x0A;<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@1af431c" ratio="0.48822606" ratioLeft="311" ratioRight="326" relationship="4" relative="org.eclipse.ui.internal.ViewStack@97048e">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
 <page content="org.eclipse.search.ui.views.SearchView" label="Search"/>
 <page content="org.eclipse.debug.ui.BreakpointView" label="LabelNotFound"/>
 <page content="org.eclipse.debug.ui.VariableView:PIN_CLONE_VIEW_1" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 <part id="1"/>
 <part id="2"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@15f1fa0" ratio="0.5" ratioLeft="679" ratioRight="679" relationship="2" relative="org.eclipse.ui.internal.ViewStack@1af431c">&#x0A;<folder activePageID="org.eclipse.debug.ui.ExpressionView" appearance="2" expanded="2">&#x0A;<page content="org.coocox.codebugger.trace.ui.traceview" label="Semihosting"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@15f1fa0" ratio="0.5" ratioLeft="679" ratioRight="679" relationship="2" relative="org.eclipse.ui.internal.ViewStack@1af431c">
+<folder activePageID="org.eclipse.cdt.debug.ui.memory.memorybrowser.MemoryBrowser" appearance="2" expanded="2">
+<page content="org.coocox.codebugger.trace.ui.traceview" label="Semihosting"/>
 <page content="org.eclipse.debug.ui.VariableView" label="Variables"/>
 <page content="org.eclipse.debug.ui.ExpressionView" label="Expressions"/>
+<page content="org.eclipse.cdt.debug.ui.memory.memorybrowser.MemoryBrowser" label="Memory Browser"/>
 <page content="org.eclipse.debug.ui.MemoryView" label="LabelNotFound"/>
-<page content="org.eclipse.cdt.debug.ui.memory.memorybrowser.MemoryBrowser" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<page content="org.coocox.component.ui.view.ComponentView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 <part id="1"/>
 <part id="2"/>
+<part id="3"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@1564f4" ratio="0.7496318" ratioLeft="1018" ratioRight="340" relationship="2" relative="org.eclipse.ui.internal.ViewStack@97048e">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.cdt.dsf.debug.ui.disassembly.view" label="LabelNotFound"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@1564f4" ratio="0.7496318" ratioLeft="1018" ratioRight="340" relationship="2" relative="org.eclipse.ui.internal.ViewStack@97048e">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.cdt.dsf.debug.ui.disassembly.view" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
 <page content="org.eclipse.debug.ui.RegisterView" label="LabelNotFound"/>
 <page content="org.coocox.coassistant.view.CoAssistantView_debug" label="LabelNotFound"/>
@@ -270,176 +294,169 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F030_V2/modbus_func.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F030_V2/modbus_func.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F030_V2/app/hdc1080.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F030_V2/driver/i2c.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F030_V2/app/hdc1080.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F030_V2/stm32_lib/src/stm32f0xx_rcc.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F030_V2/driver/gpio.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F030_V2/app/main.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" path="/STM32F030_V2/cmsis_boot/startup/startup_stm32f0xx.s"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F030_V2/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F030_V2/modbus.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F030_V2/uart.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F030_V2/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F030_V2/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F030_V2/modbus_func.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" path="/STM32F030_V2/cmsis_boot/startup/startup_stm32f0xx.s"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F030_V2/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F030_V2/modbus.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" path="/STM32F030_V2/cmsis_boot/startup/startup_stm32f0xx.s"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F030_V2/modbus_func.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F030_V2/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F030_V2/components/CooCox_CoOS/kernel/CoOS.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F030_V2/components/CooCox_CoOS/kernel/task.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F030_V2/components/CooCox_CoOS/kernel/core.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F030_V2/components/CooCox_CoOS/kernel/coocox.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F030_V2/pub_var.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F030_V2/app/main.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F030_V2/app/main.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F030_V2/app/main.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F030_V2/app/main.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F030_V2/app/main.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F030_V2/app/main.c"/>
 </editors>
-<item historyLabel="modbus_func.h" index="1">
-<position info="not_deleted" x="1190" y="31"/>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="3996" y="0"/>
 </item>
-<item historyLabel="modbus_func.c" index="0">
-<position info="not_deleted" x="5687" y="31"/>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="4045" y="0"/>
 </item>
-<item historyLabel="startup_stm32f0xx.s" index="2">
+<item historyLabel="stm32f0xx_rcc.c" index="3">
+<position info="not_deleted" x="63200" y="13"/>
+</item>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="4045" y="0"/>
+</item>
+<item historyLabel="gpio.c" index="4">
+<position info="not_deleted" x="2159" y="0"/>
+</item>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="4045" y="0"/>
+</item>
+<item historyLabel="hdc1080.h" index="2">
+<position info="not_deleted" x="1607" y="0"/>
+</item>
+<item historyLabel="main.c" index="5">
+<position info="not_deleted" x="3990" y="0"/>
+</item>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="4045" y="0"/>
+</item>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="3318" y="0"/>
+</item>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="3290" y="0"/>
+</item>
+<item historyLabel="i2c.c" index="1">
+<position info="not_deleted" x="596" y="10"/>
+</item>
+<item historyLabel="startup_stm32f0xx.s" index="6">
 <position/>
-</item>
-<item historyLabel="main.c" index="3">
-<position info="not_deleted" x="4018" y="0"/>
-</item>
-<item historyLabel="modbus.c" index="4">
-<position info="not_deleted" x="7222" y="21"/>
-</item>
-<item historyLabel="modbus_func.c" index="0">
-<position info="not_deleted" x="3643" y="0"/>
-</item>
-<item historyLabel="uart.c" index="5">
-<position info="not_deleted" x="8482" y="0"/>
-</item>
-<item historyLabel="modbus_func.c" index="0">
-<position/>
-</item>
-<item historyLabel="startup_stm32f0xx.s" index="2">
-<position/>
-</item>
-<item historyLabel="main.c" index="3">
-<position info="not_deleted" x="4018" y="0"/>
-</item>
-<item historyLabel="modbus_func.c" index="0">
-<position info="not_deleted" x="722" y="0"/>
-</item>
-<item historyLabel="startup_stm32f0xx.s" index="2">
-<position/>
-</item>
-<item historyLabel="main.c" index="6">
-<position info="not_deleted" x="4018" y="0"/>
-</item>
-<item historyLabel="modbus_func.c" index="0">
-<position info="not_deleted" x="720" y="0"/>
-</item>
-<item historyLabel="modbus_func.c" index="0">
-<position info="not_deleted" x="720" y="0"/>
-</item>
-<item historyLabel="startup_stm32f0xx.s" index="2">
-<position info="not_deleted" x="0" y="0"/>
 </item>
 <item historyLabel="main.c" index="7">
-<position info="not_deleted" x="4018" y="0"/>
+<position info="not_deleted" x="3990" y="0"/>
 </item>
-<item historyLabel="modbus_func.c" index="0">
-<position info="not_deleted" x="720" y="0"/>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="3290" y="0"/>
 </item>
-<item historyLabel="modbus_func.h" index="8">
-<position info="not_deleted" x="1476" y="17"/>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="3290" y="0"/>
 </item>
-<item historyLabel="modbus_func.c" index="0">
-<position info="not_deleted" x="536" y="0"/>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="2743" y="0"/>
 </item>
-<item historyLabel="modbus_func.h" index="8">
-<position info="not_deleted" x="1444" y="0"/>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="2705" y="0"/>
 </item>
-<item historyLabel="modbus_func.c" index="0">
-<position info="not_deleted" x="5823" y="5"/>
+<item historyLabel="hdc1080.h" index="2">
+<position info="not_deleted" x="928" y="0"/>
 </item>
-<item historyLabel="modbus_func.h" index="8">
-<position info="not_deleted" x="1438" y="5"/>
-</item>
-<item historyLabel="modbus_func.c" index="0">
-<position info="not_deleted" x="701" y="0"/>
-</item>
-<item historyLabel="startup_stm32f0xx.s" index="9">
+<item historyLabel="startup_stm32f0xx.s" index="6">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="main.c" index="10">
-<position info="not_deleted" x="4018" y="0"/>
-</item>
-<item historyLabel="modbus_func.c" index="0">
-<position info="not_deleted" x="2771" y="0"/>
-</item>
-<item historyLabel="modbus.c" index="11">
-<position info="not_deleted" x="7226" y="0"/>
-</item>
-<item historyLabel="modbus_func.c" index="0">
-<position info="not_deleted" x="2771" y="0"/>
-</item>
-<item historyLabel="modbus.c" index="11">
-<position info="not_deleted" x="7226" y="0"/>
-</item>
-<item historyLabel="modbus_func.c" index="0">
-<position info="not_deleted" x="3666" y="0"/>
-</item>
-<item historyLabel="modbus.c" index="11">
-<position info="not_deleted" x="7386" y="19"/>
-</item>
-<item historyLabel="modbus_func.c" index="0">
-<position info="not_deleted" x="2520" y="22"/>
-</item>
-<item historyLabel="modbus.c" index="11">
-<position info="not_deleted" x="7409" y="0"/>
-</item>
-<item historyLabel="modbus_func.c" index="0">
-<position info="not_deleted" x="2511" y="31"/>
-</item>
-<item historyLabel="modbus_func.h" index="8">
-<position info="not_deleted" x="1438" y="5"/>
-</item>
-<item historyLabel="startup_stm32f0xx.s" index="12">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="startup_stm32f0xx.s" index="12">
+<item historyLabel="startup_stm32f0xx.s" index="6">
 <position info="not_deleted" x="2693" y="0"/>
 </item>
-<item historyLabel="modbus_func.c" index="13">
-<position/>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="4883" y="0"/>
 </item>
-<item historyLabel="main.c" index="14">
-<position info="not_deleted" x="4273" y="12"/>
+<item historyLabel="main.c" index="8">
+<position info="not_deleted" x="3990" y="0"/>
 </item>
-<item historyLabel="CoOS.h" index="15">
-<position info="not_deleted" x="7029" y="10"/>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="4851" y="0"/>
 </item>
-<item historyLabel="task.c" index="16">
-<position info="not_deleted" x="26928" y="10"/>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="4935" y="0"/>
 </item>
-<item historyLabel="CoOS.h" index="15">
-<position info="not_deleted" x="7029" y="10"/>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="4986" y="0"/>
 </item>
-<item historyLabel="main.c" index="14">
-<position info="not_deleted" x="4182" y="14"/>
+<item historyLabel="hdc1080.h" index="2">
+<position info="not_deleted" x="928" y="0"/>
 </item>
-<item historyLabel="core.c" index="17">
-<position info="not_deleted" x="9561" y="10"/>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="4986" y="0"/>
 </item>
-<item historyLabel="coocox.h" index="18">
-<position info="not_deleted" x="2096" y="10"/>
+<item historyLabel="main.c" index="9">
+<position info="not_deleted" x="3990" y="0"/>
 </item>
-<item historyLabel="core.c" index="17">
-<position info="not_deleted" x="9561" y="10"/>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="4851" y="0"/>
 </item>
-<item historyLabel="main.c" index="14">
-<position info="not_deleted" x="4182" y="14"/>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="4935" y="0"/>
 </item>
-<item historyLabel="pub_var.c" index="19">
-<position info="not_deleted" x="794" y="13"/>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="3999" y="0"/>
 </item>
-<item active="true" historyLabel="main.c" index="14">
-<position info="not_deleted" x="4054" y="0"/>
+<item historyLabel="main.c" index="10">
+<position info="not_deleted" x="3990" y="0"/>
+</item>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="4851" y="0"/>
+</item>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="4935" y="0"/>
+</item>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="4986" y="0"/>
+</item>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="5005" y="0"/>
+</item>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="4151" y="0"/>
+</item>
+<item historyLabel="main.c" index="11">
+<position info="not_deleted" x="3990" y="0"/>
+</item>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="4151" y="0"/>
+</item>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="5060" y="0"/>
+</item>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="5117" y="0"/>
+</item>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="5060" y="0"/>
+</item>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="5080" y="0"/>
+</item>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="4851" y="0"/>
+</item>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="4144" y="0"/>
+</item>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="4851" y="0"/>
+</item>
+<item historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="4868" y="0"/>
+</item>
+<item historyLabel="main.c" index="12">
+<position info="not_deleted" x="3990" y="0"/>
+</item>
+<item active="true" historyLabel="hdc1080.c" index="0">
+<position info="not_deleted" x="4851" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -448,50 +465,47 @@
 <actionBarAdvisor/>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="pub_var.c" tooltip="STM32F030_V2/pub_var.c">
-<persistable path="/STM32F030_V2/pub_var.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="coocox.h" tooltip="STM32F030_V2/components/CooCox_CoOS/kernel/coocox.h">
-<persistable path="/STM32F030_V2/components/CooCox_CoOS/kernel/coocox.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="core.c" tooltip="STM32F030_V2/components/CooCox_CoOS/kernel/core.c">
-<persistable path="/STM32F030_V2/components/CooCox_CoOS/kernel/core.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="task.c" tooltip="STM32F030_V2/components/CooCox_CoOS/kernel/task.c">
-<persistable path="/STM32F030_V2/components/CooCox_CoOS/kernel/task.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="CoOS.h" tooltip="STM32F030_V2/components/CooCox_CoOS/kernel/CoOS.h">
-<persistable path="/STM32F030_V2/components/CooCox_CoOS/kernel/CoOS.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="STM32F030_V2/app/main.c">
+<persistable path="/STM32F030_V2/app/main.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" name="startup_stm32f0xx.s" tooltip="STM32F030_V2/cmsis_boot/startup/startup_stm32f0xx.s">
 <persistable path="/STM32F030_V2/cmsis_boot/startup/startup_stm32f0xx.s"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="STM32F030_V2/main.c">
-<persistable path="/STM32F030_V2/main.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="util.c" tooltip="STM32F030_V2/app/util.c">
+<persistable path="/STM32F030_V2/app/util.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="pub_s.h" tooltip="STM32F030_V2/pub_s.h">
-<persistable path="/STM32F030_V2/pub_s.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hdc1080.h" tooltip="STM32F030_V2/app/hdc1080.h">
+<persistable path="/STM32F030_V2/app/hdc1080.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="structureArray.h" tooltip="sampleProject/structureArray.h">
-<persistable path="/sampleProject/structureArray.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f0xx_gpio.h" tooltip="STM32F030_V2/stm32_lib/inc/stm32f0xx_gpio.h">
+<persistable path="/STM32F030_V2/stm32_lib/inc/stm32f0xx_gpio.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="structureArray.c" tooltip="sampleProject/structureArray.c">
-<persistable path="/sampleProject/structureArray.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="timer.c" tooltip="STM32F030_V2/driver/timer.c">
+<persistable path="/STM32F030_V2/driver/timer.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stuctureArray.c" tooltip="sampleProject/stuctureArray.c">
-<persistable path="/sampleProject/stuctureArray.c"/>
+<file factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stdint.h" tooltip="C:\Program Files (x86)\GNU Tools ARM Embedded\5.4 2016q3\arm-none-eabi\include\stdint.h">
+<persistable path="C:\Program Files (x86)\GNU Tools ARM Embedded\5.4 2016q3\arm-none-eabi\include\stdint.h" project="STM32F030_V2"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stuctureArray.h" tooltip="sampleProject/stuctureArray.h">
-<persistable path="/sampleProject/stuctureArray.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="modbus_func.h" tooltip="STM32F030_V2/app/modbus_func.h">
+<persistable path="/STM32F030_V2/app/modbus_func.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="sampleProject/main.c">
-<persistable path="/sampleProject/main.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="i2c.c" tooltip="STM32F030_V2/driver/i2c.c">
+<persistable path="/STM32F030_V2/driver/i2c.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="uart.c" tooltip="STM32F030_V2/uart.c">
-<persistable path="/STM32F030_V2/uart.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="uart.c" tooltip="STM32F030_V2/driver/uart.c">
+<persistable path="/STM32F030_V2/driver/uart.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="core_cmFunc.h" tooltip="STM32F030_V2/components/cmsis_core/core_cmFunc.h">
-<persistable path="/STM32F030_V2/components/cmsis_core/core_cmFunc.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="port.c" tooltip="STM32F030_V2/components/CooCox_CoOS/portable/GCC/port.c">
+<persistable path="/STM32F030_V2/components/CooCox_CoOS/portable/GCC/port.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f0xx.h" tooltip="STM32F030_V2/cmsis_boot/stm32f0xx.h">
+<persistable path="/STM32F030_V2/cmsis_boot/stm32f0xx.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f0xx_rcc.h" tooltip="STM32F030_V2/stm32_lib/inc/stm32f0xx_rcc.h">
+<persistable path="/STM32F030_V2/stm32_lib/inc/stm32f0xx_rcc.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="gpio.c" tooltip="STM32F030_V2/driver/gpio.c">
+<persistable path="/STM32F030_V2/driver/gpio.c"/>
 </file>
 </mruList>
 </workbench>

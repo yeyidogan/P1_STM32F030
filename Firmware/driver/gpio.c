@@ -43,6 +43,20 @@ void initGpio(void) {
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_Level_3;
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	GPIO_Init(GPIOA, &GPIO_InitStructure);
+	/* I2C1 Pins Configuration */
+
+	/* Connect pin to Peripherals */
+	GPIO_DeInit(GPIOB);
+	GPIO_PinAFConfig(GPIOB, GPIO_PinSource6, GPIO_AF_1);
+	GPIO_PinAFConfig(GPIOB, GPIO_PinSource7, GPIO_AF_1);
+	//PB6 = I2C1_SCL, PB7 = I2C1_SDA
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_7;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
+	GPIO_InitStructure.GPIO_OType = GPIO_OType_OD;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_Level_1;
+	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
+	GPIO_Init(GPIOB, &GPIO_InitStructure);
+	/***************************************************/
 
 	GPIO_DeInit(GPIOC);
 	/* Configure PC0 to PC9 in output push-pull mode */
