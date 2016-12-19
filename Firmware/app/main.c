@@ -95,7 +95,7 @@ void taskB (test_t* p) {
  *******************************************************************************
  */
 #define BSRR_VAL 0x0300
-void taskC (void* pdata) {
+__attribute__((noreturn)) void taskC (void* pdata) {
 	//unsigned int led_num;
 	while (1) {
 		/* Set PC8 and PC9 */
@@ -180,6 +180,4 @@ void rccConfig(void) {
 void assert_failed(uint8_t* file, uint32_t line){
 	while (1);
 }
-/* * * END OF FILE * * */
-
 /* * * END OF FILE * * */

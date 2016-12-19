@@ -32,10 +32,11 @@ void write_HDC1080_configuration(void){
 			break;
 		}
 	}
-	CoLeaveMutexSection(mutex_I2C);
 
 	if (stI2cStatus.bits.completed_flag == false)
 		stHDC1080Status.ok = false;
+
+	CoLeaveMutexSection(mutex_I2C);
 }
 
 /**
@@ -45,7 +46,7 @@ void write_HDC1080_configuration(void){
   */
 void read_HDC1080_configuration(void){
 	CoEnterMutexSection(mutex_I2C);
-	ucI2CMasterSendStartStop = I2C_MASTER_SEND_START;
+	ucI2CMasterSendStartStop = I2C_MASTER_SEND_RESTART;
 	stI2cMsgTx.length = HDC1080_RD_WR_CONF_POINTER_SIZE; //1 byte
 	stI2cMsgTx.slaveAddress = HDC1080_I2C_SLAVE_ADD;
 	i2c_master_process(I2C_MASTER_WRITE);
@@ -74,7 +75,7 @@ void read_HDC1080_configuration(void){
 void trig_HDC1080(void){
 	CoEnterMutexSection(mutex_I2C);
 	ucI2CMasterSendStartStop = I2C_MASTER_SEND_START;
-	stI2cMsgTx.length = sizeof(PTR_HDC1080_CONF_FRAME_WR);
+	stI2cMsgTx.length = sizeof(ST_HDC1080_WR_CONF_FRAME_TYPE);
 	stI2cMsgTx.slaveAddress = HDC1080_I2C_SLAVE_ADD;
 	PTR_HDC1080_CONF_FRAME_WR->ucRegister = TEMP_REG;
 	PTR_HDC1080_CONF_FRAME_WR->uiData = (uint16_t)0x0102;
@@ -102,8 +103,6 @@ void init_HDC1080(void){
 	PTR_HDC1080_CONF_FRAME_WR->ucRegister = CONFIGURATION_REG;
 	PTR_HDC1080_CONF_FRAME_WR->uiData = HDC1080_CONF_REGISTER_VAL;
 	write_HDC1080_configuration();
-	if (stHDC1080Status.ok == false)
-		return;
 	CoTickDelay(200); //delay 0.2 sec
 }
 /**
@@ -113,17 +112,7 @@ void init_HDC1080(void){
   */
 void taskHDC1080(void *argument){
 	uint32_t ulTemp;
-	//osThreadId_t threadId;
-	//osStatus_t statusT;
-	//while(1)
-	//	CoTickDelay(2000); //delay 2 sec
-#if 1
-	//threadId = osThreadGetId();
-	//if (threadId != NULL) {
-	//	statusT = osThreadSetPriority (threadId, osPriorityBelowNormal);
-		//if (statusT == osOK) {
-		//}
-	//}
+
 	ulTemp = (uint32_t)0x03;
 	while (ulTemp--){
 		init_HDC1080();
@@ -136,8 +125,10 @@ void taskHDC1080(void *argument){
 	while (1){
 		if (stHDC1080Status.ok == true){
 			trig_HDC1080();
-			if (stHDC1080Status.ok == false)
+			if (stHDC1080Status.ok == false){
+				CoTickDelay(200); //delay 0.2 sec
 				continue;
+			}
 			CoTickDelay(200); //delay 0.2 sec
 
 			CoEnterMutexSection(mutex_I2C); //wait for 1 second??
@@ -169,6 +160,5 @@ void taskHDC1080(void *argument){
 		}
 		CoTickDelay(1000); //1000 milisecond delay
 	}
-#endif
 }
 /* * * END OF FILE * * */
