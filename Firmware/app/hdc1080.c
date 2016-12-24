@@ -113,13 +113,13 @@ void init_HDC1080(void){
 void taskHDC1080(void *argument){
 	uint32_t ulTemp;
 
-	ulTemp = (uint32_t)0x03;
-	while (ulTemp--){
-		init_HDC1080();
-		if (stHDC1080Status.ok == true)
-			break;
-		CoTickDelay(200); //delay 0.2 sec
-	}
+	//ulTemp = (uint32_t)0x03;
+	//while (ulTemp--){
+	//	init_HDC1080();
+	//	if (stHDC1080Status.ok == true)
+	//		break;
+	//	CoTickDelay(200); //delay 0.2 sec
+	//}
 	//read_HDC1080_configuration();
 
 	while (1){
@@ -157,6 +157,9 @@ void taskHDC1080(void *argument){
 				ulTemp = (uint32_t)(stTempHum.uiHumidity * (uint32_t)100) / 0x10000;
 				stTempHum.uiHumidity = (uint16_t)ulTemp;
 			}
+		}
+		else{
+			init_HDC1080();
 		}
 		CoTickDelay(1000); //1000 milisecond delay
 	}

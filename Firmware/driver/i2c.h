@@ -48,6 +48,7 @@ typedef union{
 		uint8_t bus_error_flag:1;
 		uint8_t over_run_flag:1;
 		uint8_t arblost_flag:1;
+		uint8_t nack_flag:1;
 		uint8_t completed_flag:1;
 	}bits;
 }I2C_STATUS_TYPE;

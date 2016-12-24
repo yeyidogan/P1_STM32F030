@@ -37,7 +37,8 @@ void I2C1_IRQHandler(void){
 	}
 	if (I2C1->ISR & I2C_ISR_STOPF){ //stop detected
 		I2C1->ICR = I2C_ICR_STOPCF; //clear flag
-		stI2cStatus.bits.completed_flag = true;
+		if (stI2cStatus.bits.nack_flag == false)
+			stI2cStatus.bits.completed_flag = true;
 	}
 	if (I2C1->ISR & I2C_ISR_TC){ //transfer completed in master mode
 		/*This flag is set by hardware when RELOAD=0, AUTOEND=0 
@@ -76,6 +77,7 @@ void I2C1_IRQHandler(void){
 	}
 	if (I2C1->ISR & I2C_ISR_NACKF){ //NACK received flag
 		I2C1->ICR = I2C_ICR_NACKCF; //clear flag
+		stI2cStatus.bits.nack_flag = true;
 	}
 	
 	//Error interrupts
