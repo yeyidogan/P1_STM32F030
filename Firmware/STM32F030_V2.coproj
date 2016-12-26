@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Project version="2G - 2.0.3" name="STM32F030_V2">
+<Project version="2G - 2.0.3" name="cat_toilet">
   <Target name="STM32F030_V2" isCurrent="1">
     <Device manufacturerId="9" manufacturerName="ST" chipId="310" chipName="STM32F030R8T6" boardId="" boardName="" boardUrl="" coreId="1" coreName="Cortex M0"/>
     <BuildOption>
@@ -34,7 +34,7 @@
           <Memory name="IROM2" type="ReadOnly" size="" startValue=""/>
           <Memory name="IRAM2" type="ReadWrite" size="" startValue=""/>
         </MemoryAreas>
-        <LocateLinkFile path="../../../../appdata/roaming/coocox/coide/configuration/programdata/stm32f030_v2/arm-gcc-link.ld" type="0"/>
+        <LocateLinkFile path="../../../../appdata/roaming/coocox/coide/configuration/programdata/cat_toilet/arm-gcc-link.ld" type="0"/>
       </Link>
       <Output>
         <Option name="OutputFileType" value="0"/>

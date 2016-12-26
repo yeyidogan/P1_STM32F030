@@ -42,8 +42,8 @@
 <editorState selectionHorizontalPixel="0" selectionLength="12" selectionOffset="568" selectionTopPixel="111"/>
 </editor>
 <editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/app/main.c" title="main.c" tooltip="C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/app/main.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/STM32F030_V2/app/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4196" selectionTopPixel="1800"/>
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/cat_toilet/app/main.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4261" selectionTopPixel="1920"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="pub_var.c" partName="pub_var.c" path="C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/app/pub_var.c" title="pub_var.c" tooltip="C:/Users/yilmaz/Documents/GitHub/P1_STM32F030/Firmware/app/pub_var.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/STM32F030_V2/app/pub_var.c"/>
@@ -60,18 +60,9 @@
 <viewState/>
 </view>
 <view id="org.coocox.builder.ui.views.ProjectView" partName="Project">
-<viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="18">
-<expanded>
-<element path="/STM32F030_V2"/>
-<element path="/STM32F030_V2/app"/>
-<element path="/STM32F030_V2/config"/>
-<element path="/STM32F030_V2/driver"/>
-<element path="/STM32F030_V2/stm32_lib"/>
-<element path="/STM32F030_V2/stm32_lib/inc"/>
-<element path="/STM32F030_V2/stm32_lib/src"/>
-</expanded>
+<viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="0">
 <selection>
-<element path="/STM32F030_V2/app/main.c"/>
+<element path="/cat_toilet"/>
 </selection>
 </viewState>
 </view>
@@ -172,7 +163,7 @@
 </presentation>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.30335367" ratioLeft="199" ratioRight="457" relationship="2" relative="org.eclipse.ui.internal.ViewStack@157da63"/>
+<info part="org.eclipse.ui.editorss" ratio="0.20073801" ratioLeft="272" ratioRight="1083" relationship="2" relative="org.eclipse.ui.internal.ViewStack@157da63"/>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@c2d9df" ratio="0.7198113" ratioLeft="763" ratioRight="297" relationship="2" relative="org.eclipse.ui.editorss">
 <folder appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
@@ -298,10 +289,8 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F030_V2/app/main.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F030_V2/app/hdc1080.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/STM32F030_V2/app/pub_var.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/cat_toilet/app/main.c"/>
 </editors>
-<item historyLabel="hdc1080.c" index="0">
-<position info="not_deleted" x="4870" y="0"/>
-</item>
 <item historyLabel="hdc1080.h" index="1">
 <position info="not_deleted" x="528" y="0"/>
 </item>
@@ -446,8 +435,11 @@
 <item historyLabel="pub_var.c" index="12">
 <position info="not_deleted" x="776" y="0"/>
 </item>
-<item active="true" historyLabel="main.c" index="10">
+<item historyLabel="main.c" index="10">
 <position info="not_deleted" x="4092" y="75"/>
+</item>
+<item active="true" historyLabel="main.c" index="13">
+<position info="not_deleted" x="4196" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -456,6 +448,11 @@
 <actionBarAdvisor/>
 </window>
 <mruList>
+<file factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage" name="" tooltip="">
+<persistable>
+<org.coocox.welcome.ui.WelcomePage/>
+</persistable>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="pub_var.c" tooltip="STM32F030_V2/app/pub_var.c">
 <persistable path="/STM32F030_V2/app/pub_var.c"/>
 </file>
@@ -497,9 +494,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="timer.c" tooltip="STM32F030_V2/driver/timer.c">
 <persistable path="/STM32F030_V2/driver/timer.c"/>
-</file>
-<file factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stdint.h" tooltip="C:\Program Files (x86)\GNU Tools ARM Embedded\5.4 2016q3\arm-none-eabi\include\stdint.h">
-<persistable path="C:\Program Files (x86)\GNU Tools ARM Embedded\5.4 2016q3\arm-none-eabi\include\stdint.h" project="STM32F030_V2"/>
 </file>
 </mruList>
 </workbench>

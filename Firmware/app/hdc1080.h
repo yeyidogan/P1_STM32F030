@@ -27,7 +27,7 @@
 #define MANUFACTURER_ID_REG 0xFE
 #define DEVICE_ID_REG 0xFF
 
-#define HDC1080_CONF_REGISTER_VAL 0x1000
+#define HDC1080_CONF_REGISTER_VAL 0x0010 //endian uyusmazligindan oturu
 	//bit15:0 normal operation. 1=software reset
 	//bit14:0 reserved
 	//bit13:0 Heat disabled
